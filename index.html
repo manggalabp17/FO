@@ -6,6 +6,17 @@
 <meta name="theme-color" content="#f0ede4">
 <title>Kabel Fiber Optik</title>
 <meta name="description" content="Referensi teknis kabel fiber optik: pengertian, struktur, cara kerja, jenis, kode warna, kelebihan, perbandingan media, aplikasi, konektor, alat ukur, dan tips instalasi.">
+<meta name="author" content="manggalabp17">
+<link rel="canonical" href="https://manggalabp17.github.io/FO/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%23ffe600%22%20stroke%3D%22%230a0a0a%22%20stroke-width%3D%224%22/%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kabel Fiber Optik">
+<meta property="og:description" content="Referensi teknis kabel fiber optik: pengertian, struktur, cara kerja, jenis, kode warna, kelebihan, perbandingan media, aplikasi, konektor, alat ukur, dan tips instalasi.">
+<meta property="og:url" content="https://manggalabp17.github.io/FO/">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kabel Fiber Optik">
+<meta name="twitter:description" content="Referensi teknis kabel fiber optik: pengertian, struktur, cara kerja, jenis, kode warna, konektor, alat ukur, dan tips instalasi.">
 <style>
   :root{
     --bg:#f0ede4;
@@ -20,6 +31,8 @@
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:88px}
+  /* compensate for sticky header when jumping to #main or section anchors */
+  main,section[id]{scroll-margin-top:88px}
   body{
     background:var(--bg);color:var(--fg);
     font-family:var(--sans);font-size:17px;line-height:1.6;
@@ -407,7 +420,7 @@
 
 <header>
   <div class="nav-wrap">
-    <a class="brand" href="#top">FO · Fiber Optik</a>
+    <a class="brand" href="#main">FO · Fiber Optik</a>
     <nav class="nav-links" aria-label="Navigasi utama">
       <a href="#pengertian">Pengertian</a>
       <a href="#struktur">Struktur</a>
@@ -421,8 +434,8 @@
       <a href="#instalasi">Instalasi</a>
       <a href="#glosarium">Glosarium</a>
     </nav>
-    <details class="menu">
-      <summary>Menu</summary>
+    <details class="menu" aria-expanded="false">
+      <summary aria-haspopup="true">Menu</summary>
       <nav aria-label="Navigasi seluler">
         <a href="#pengertian">Pengertian</a>
         <a href="#struktur">Struktur</a>
@@ -439,8 +452,6 @@
     </details>
   </div>
 </header>
-
-<div id="top"></div>
 
 <section class="hero">
   <div class="hero-inner">
@@ -905,13 +916,46 @@
 </footer>
 
 <script>
-  /* Tutup menu mobile setelah link diklik */
-  document.querySelectorAll('.menu nav a').forEach(function(a){
-    a.addEventListener('click', function(){
-      var menu = document.querySelector('.menu');
-      if (menu) menu.removeAttribute('open');
+  (function(){
+    "use strict";
+    var menu = document.querySelector('.menu');
+    if (!menu) return;
+    var summary = menu.querySelector('summary');
+
+    /* sinkronkan aria-expanded saat details dibuka/ditutup */
+    var sync = function(){
+      menu.setAttribute('aria-expanded', menu.hasAttribute('open') ? 'true' : 'false');
+    };
+    sync();
+    menu.addEventListener('toggle', sync);
+
+    /* tutup menu mobile setelah link di dalamnya diklik */
+    var links = menu.querySelectorAll('nav a');
+    for (var i = 0; i < links.length; i++){
+      links[i].addEventListener('click', function(){
+        menu.removeAttribute('open');
+        sync();
+      });
+    }
+
+    /* tutup dengan tombol Escape saat menu terbuka */
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && menu.hasAttribute('open')){
+        menu.removeAttribute('open');
+        sync();
+        if (summary) summary.focus();
+      }
     });
-  });
+
+    /* tutup menu saat klik di luar */
+    document.addEventListener('click', function(e){
+      if (!menu.hasAttribute('open')) return;
+      if (!menu.contains(e.target)) {
+        menu.removeAttribute('open');
+        sync();
+      }
+    });
+  })();
 </script>
 </body>
   </html>
