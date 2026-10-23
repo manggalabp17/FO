@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f0ede4">
+<title>Kabel Fiber Optik</title>
+<meta name="description" content="Referensi teknis kabel fiber optik: pengertian, struktur, cara kerja, jenis, kode warna, kelebihan, perbandingan media, aplikasi, konektor, alat ukur, dan tips instalasi.">
+<style>
+  :root{
+    --bg:#f0ede4;
+    --fill:#e8e4d8;
+    --fg:#0a0a0a;
+    --muted:#4a4a4a;
+    --accent:#ffe600;
+    --accent-hot:#ff3300;
+    --border:#0a0a0a;
+    --mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,"Helvetica Neue",Arial,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:88px}
+  body{
+    background:var(--bg);color:var(--fg);
+    font-family:var(--sans);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:var(--fg);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+  a:hover{background:var(--accent);text-decoration:none}
+  strong{font-weight:700}
+  em{font-style:italic}
+  code{
+    font-family:var(--mono);font-size:0.86em;
+    background:var(--fg);color:var(--accent);
+    padding:1px 6px;
+  }
+  .skip{
+    position:fixed;top:-60px;left:16px;z-index:1000;
+    background:var(--fg);color:var(--accent);
+    padding:10px 16px;font-family:var(--mono);font-size:12px;
+    font-weight:800;text-transform:uppercase;letter-spacing:0.06em;
+    text-decoration:none;transition:top 0.12s;
+  }
+  .skip:focus{top:16px}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--bg);border-bottom:4px solid var(--border);
+  }
+  .nav-wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:24px;height:68px;padding:0 24px;
+    max-width:1120px;margin:0 auto;
+  }
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:15px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.02em;
+    text-decoration:none;color:var(--fg);white-space:nowrap;
+  }
+  .brand::before{
+    content:"";width:18px;height:18px;
+    background:var(--accent);border:3px solid var(--border);
+    flex-shrink:0;
+  }
+  .brand:hover{background:none}
+  .nav-links{display:flex;gap:2px}
+  .nav-links a{
+    font-family:var(--mono);font-size:11px;font-weight:700;
+    text-transform:uppercase;letter-spacing:0.05em;
+    text-decoration:none;padding:8px 6px;color:var(--fg);
+    border-bottom:3px solid transparent;
+  }
+  .nav-links a:hover{background:none;border-bottom-color:var(--accent-hot)}
+  .menu{display:none;position:relative}
+  .menu summary{
+    list-style:none;cursor:pointer;
+    font-family:var(--mono);font-size:12px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.06em;
+    padding:10px 16px;background:var(--fg);color:var(--accent);
+    border:3px solid var(--border);
+  }
+  .menu summary::-webkit-details-marker{display:none}
+  .menu[open] summary{background:var(--accent);color:var(--fg)}
+  .menu nav{
+    position:absolute;right:0;top:calc(100% + 4px);
+    background:var(--bg);border:3px solid var(--border);
+    display:flex;flex-direction:column;
+    min-width:230px;padding:4px 0;
+  }
+  .menu nav a{
+    font-family:var(--mono);font-size:12px;font-weight:700;
+    text-transform:uppercase;letter-spacing:0.04em;
+    padding:10px 16px;text-decoration:none;color:var(--fg);
+  }
+  .menu nav a:hover{background:var(--accent);text-decoration:none}
+
+  /* ===== HERO ===== */
+  .hero{
+    background:var(--accent);border-bottom:4px solid var(--border);
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;padding:64px 24px 56px}
+  .hero-kicker{
+    display:inline-block;
+    font-family:var(--mono);font-size:12px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.1em;
+    background:var(--fg);color:var(--accent);
+    padding:6px 12px;margin-bottom:24px;
+  }
+  .hero h1{
+    font-family:var(--mono);font-weight:800;
+    font-size:clamp(2.5rem,8vw,6rem);
+    line-height:0.92;letter-spacing:-0.045em;
+    text-transform:uppercase;margin-bottom:28px;
+    max-width:13ch;
+  }
+  .hero-lede{
+    font-size:20px;line-height:1.5;max-width:36em;
+    margin-bottom:32px;color:var(--fg);
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:16px}
+  .btn{
+    display:inline-block;font-family:var(--mono);
+    font-size:12px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.06em;
+    padding:14px 22px;
+    background:var(--fg);color:var(--accent);
+    border:3px solid var(--border);
+    box-shadow:6px 6px 0 var(--border);
+    text-decoration:none;cursor:pointer;
+    transition:transform 0.08s,box-shadow 0.08s,background 0.08s,color 0.08s;
+  }
+  .btn:hover{
+    transform:translate(3px,3px);
+    box-shadow:3px 3px 0 var(--border);
+    background:var(--fg);color:var(--accent);
+    text-decoration:none;
+  }
+  .btn-outline{background:transparent;color:var(--fg)}
+  .btn-outline:hover{background:var(--fg);color:var(--accent)}
+
+  /* ===== SECTIONS ===== */
+  main > section{border-bottom:4px solid var(--border)}
+  .section-inner{max-width:1120px;margin:0 auto;padding:56px 24px}
+  .sec-num{
+    display:inline-block;
+    font-family:var(--mono);font-size:12px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.08em;
+    background:var(--fg);color:var(--accent);
+    padding:6px 12px;margin-bottom:20px;
+  }
+  section h2{
+    font-family:var(--mono);font-weight:800;
+    font-size:clamp(1.75rem,4vw,2.75rem);
+    line-height:1.02;letter-spacing:-0.035em;
+    text-transform:uppercase;margin-bottom:24px;
+    max-width:22ch;
+  }
+  section h3{
+    font-family:var(--mono);font-size:14px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.05em;
+    margin:32px 0 14px;padding-bottom:6px;
+    border-bottom:3px solid var(--border);
+    display:inline-block;
+  }
+  section p{font-size:17px;line-height:1.65;margin-bottom:16px;max-width:42em}
+  section p.lede{font-size:18px;color:var(--muted);margin-bottom:24px}
+
+  /* bullet lists default */
+  section ul.bullets{list-style:none;padding:0;margin:0 0 16px;max-width:42em}
+  section ul.bullets li{position:relative;padding:8px 0 8px 24px;border-bottom:1px solid var(--border)}
+  section ul.bullets li:last-child{border-bottom:none}
+  section ul.bullets li::before{
+    content:"";position:absolute;left:0;top:15px;
+    width:10px;height:10px;
+    background:var(--accent);border:2px solid var(--border);
+  }
+
+  /* ordered */
+  ol.numbered{
+    counter-reset:num;list-style:none;padding:0;margin:24px 0;max-width:42em;
+  }
+  ol.numbered li{
+    counter-increment:num;position:relative;
+    padding:14px 0 14px 56px;
+    border-top:2px solid var(--border);min-height:48px;
+  }
+  ol.numbered li:last-child{border-bottom:2px solid var(--border)}
+  ol.numbered li::before{
+    content:counter(num,decimal-leading-zero);
+    position:absolute;left:0;top:14px;
+    width:40px;height:40px;display:grid;place-items:center;
+    background:var(--accent);border:2px solid var(--border);
+    font-family:var(--mono);font-size:14px;font-weight:800;color:var(--fg);
+  }
+
+  /* ===== TABLE ===== */
+  .table-wrap{overflow-x:auto;border:3px solid var(--border);margin:24px 0;background:var(--bg)}
+  table{
+    width:100%;border-collapse:collapse;
+    font-family:var(--mono);font-size:14px;min-width:540px;
+  }
+  thead th{
+    background:var(--fg);color:var(--accent);text-align:left;
+    padding:12px 14px;font-size:11px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.08em;
+    border-right:2px solid var(--border);white-space:nowrap;
+  }
+  thead th:last-child{border-right:none}
+  tbody td{
+    padding:10px 14px;line-height:1.5;
+    border-top:2px solid var(--border);
+    border-right:2px solid var(--border);
+  }
+  tbody td:last-child{border-right:none}
+  tbody td:first-child{font-weight:700}
+  tbody tr:nth-child(even) td{background:rgba(0,0,0,0.03)}
+
+  /* ===== STRUKTUR ===== */
+  .struktur{
+    display:grid;grid-template-columns:260px 1fr;
+    gap:32px;align-items:start;margin:24px 0 32px;
+  }
+  .struktur figure{
+    margin:0;border:3px solid var(--border);background:var(--bg);
+    padding:16px;box-shadow:6px 6px 0 var(--border);
+  }
+  .struktur svg{display:block;width:100%;height:auto}
+  .struktur figcaption{
+    font-family:var(--mono);font-size:11px;font-weight:700;
+    text-transform:uppercase;letter-spacing:0.04em;
+    color:var(--muted);margin-top:12px;padding-top:10px;
+    border-top:2px solid var(--border);
+  }
+  .struktur dl{margin:0}
+  .struktur dt{
+    font-family:var(--mono);font-size:12px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.05em;
+    padding:10px 0 4px;border-top:2px solid var(--border);
+  }
+  .struktur dt:first-child{border-top:none;padding-top:0}
+  .struktur dd{
+    font-size:15px;line-height:1.55;color:var(--muted);padding-bottom:8px;
+  }
+
+  /* ===== PROS/CONS ===== */
+  .pros-cons{
+    display:grid;grid-template-columns:1fr 1fr;
+    border:3px solid var(--border);margin:24px 0;
+  }
+  .pros-cons > div{padding:24px}
+  .pros-cons > div:first-child{border-right:3px solid var(--border)}
+  .pros-cons h3{
+    font-family:var(--mono);font-size:13px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.06em;
+    padding:6px 12px;display:inline-block;
+    border:2px solid var(--border);margin:0 0 16px;
+  }
+  .pros h3{background:var(--accent);color:var(--fg)}
+  .cons h3{background:var(--fg);color:var(--accent)}
+  .pros-cons ul{list-style:none;padding:0;margin:0}
+  .pros-cons li{
+    position:relative;padding:8px 0 8px 20px;
+    font-size:15px;line-height:1.55;
+    border-bottom:1px dashed var(--border);
+  }
+  .pros-cons li:last-child{border-bottom:none}
+  .pros-cons li::before{
+    content:"■";position:absolute;left:0;top:6px;
+    font-size:11px;color:var(--accent-hot);
+  }
+
+  /* ===== SWATCHES ===== */
+  .swatches{
+    display:grid;grid-template-columns:repeat(6,1fr);
+    gap:8px;list-style:none;padding:0;margin:24px 0;
+  }
+  .swatches li{
+    border:3px solid var(--border);padding:8px;background:var(--bg);
+  }
+  .swatches .sw{
+    display:block;height:56px;margin-bottom:8px;
+    border:2px solid var(--border);
+  }
+  .swatches .num{
+    display:block;font-family:var(--mono);font-size:10px;
+    font-weight:700;color:var(--muted);margin-bottom:2px;
+  }
+  .swatches .name{
+    display:block;font-family:var(--mono);font-size:11px;
+    font-weight:800;text-transform:uppercase;letter-spacing:0.04em;
+  }
+
+  /* ===== NOTE ===== */
+  .note{
+    background:var(--accent);border:3px solid var(--border);
+    box-shadow:6px 6px 0 var(--border);
+    padding:20px 24px;margin:28px 0;
+    font-size:15px;line-height:1.6;max-width:42em;
+  }
+  .note strong{
+    font-family:var(--mono);text-transform:uppercase;
+    font-size:12px;letter-spacing:0.06em;
+    display:inline-block;padding:2px 8px;
+    background:var(--fg);color:var(--accent);
+    margin-bottom:8px;
+  }
+
+  /* ===== GLOSSARY ===== */
+  .glossary{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:12px;margin:24px 0;
+  }
+  .glossary > div{border:2px solid var(--border);padding:14px 16px;background:var(--bg)}
+  .glossary dt{
+    display:inline-block;font-family:var(--mono);font-size:12px;
+    font-weight:800;text-transform:uppercase;letter-spacing:0.05em;
+    background:var(--fg);color:var(--accent);
+    padding:3px 8px;margin-bottom:8px;
+  }
+  .glossary dd{font-size:14px;line-height:1.55}
+
+  /* ===== PLAIN LIST ===== */
+  .plain-list{list-style:none;padding:0;margin:20px 0;max-width:42em}
+  .plain-list li{
+    padding:12px 0;border-top:2px solid var(--border);
+    font-size:16px;line-height:1.55;
+  }
+  .plain-list li:last-child{border-bottom:2px solid var(--border)}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--fg);color:var(--bg);border-top:4px solid var(--border)}
+  .footer-inner{
+    max-width:1120px;margin:0 auto;padding:48px 24px 40px;
+  }
+  .footer-brand{
+    font-family:var(--mono);font-size:15px;font-weight:800;
+    text-transform:uppercase;letter-spacing:0.02em;
+    display:flex;align-items:center;gap:10px;margin-bottom:12px;
+  }
+  .footer-brand::before{
+    content:"";width:18px;height:18px;
+    background:var(--accent);border:3px solid var(--bg);
+  }
+  .footer-text{max-width:42em;font-size:14px;line-height:1.6;color:rgba(240,237,228,0.72)}
+  .colophon{
+    max-width:1120px;margin:0 auto;padding:16px 24px 24px;
+    border-top:2px solid rgba(240,237,228,0.2);
+    font-family:var(--mono);font-size:11px;text-transform:uppercase;
+    letter-spacing:0.06em;color:rgba(240,237,228,0.55);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:1000px){
+    .nav-links a{font-size:10px;padding:8px 4px}
+  }
+  @media(max-width:900px){
+    .nav-links{display:none}
+    .menu{display:block}
+    .nav-wrap{height:64px}
+    .hero-inner{padding:48px 20px 40px}
+    .hero h1{font-size:clamp(2.25rem,10vw,4rem);letter-spacing:-0.04em}
+    .hero-lede{font-size:18px}
+    .section-inner{padding:40px 20px}
+    section h2{font-size:clamp(1.5rem,5vw,2rem);max-width:none}
+    .struktur{grid-template-columns:1fr;gap:20px}
+    .struktur figure{max-width:220px}
+    .pros-cons{grid-template-columns:1fr}
+    .pros-cons > div:first-child{
+      border-right:none;border-bottom:3px solid var(--border);
+    }
+    .glossary{grid-template-columns:1fr}
+    .swatches{grid-template-columns:repeat(4,1fr)}
+  }
+  @media(max-width:500px){
+    body{font-size:16px}
+    .hero-lede{font-size:16px}
+    .swatches{grid-template-columns:repeat(3,1fr)}
+    .footer-inner{padding:32px 20px 24px}
+    .colophon{padding:12px 20px 20px}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+      animation:none!important;transition:none!important;scroll-behavior:auto!important;
+    }
+  }
+
+  @media print{
+    header,.skip,.menu,.hero-cta{display:none}
+    body{background:#fff;color:#000;font-size:11pt}
+    main > section{border-bottom:1pt solid #000;page-break-inside:avoid}
+    .hero{background:#ffe600}
+    .section-inner{padding:20px 0}
+    a{color:#000}
+    .table-wrap{border:1pt solid #000}
+    .note{box-shadow:none;border:1pt solid #000}
+    .struktur figure{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Langsung ke konten</a>
+
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="#top">FO · Fiber Optik</a>
+    <nav class="nav-links" aria-label="Navigasi utama">
+      <a href="#pengertian">Pengertian</a>
+      <a href="#struktur">Struktur</a>
+      <a href="#cara-kerja">Cara Kerja</a>
+      <a href="#jenis">Jenis</a>
+      <a href="#warna">Warna</a>
+      <a href="#kelebihan">Kelebihan</a>
+      <a href="#perbandingan">Banding</a>
+      <a href="#aplikasi">Aplikasi</a>
+      <a href="#konektor">Konektor</a>
+      <a href="#instalasi">Instalasi</a>
+      <a href="#glosarium">Glosarium</a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav aria-label="Navigasi seluler">
+        <a href="#pengertian">Pengertian</a>
+        <a href="#struktur">Struktur</a>
+        <a href="#cara-kerja">Cara kerja</a>
+        <a href="#jenis">Jenis</a>
+        <a href="#warna">Kode warna</a>
+        <a href="#kelebihan">Kelebihan</a>
+        <a href="#perbandingan">Perbandingan</a>
+        <a href="#aplikasi">Aplikasi</a>
+        <a href="#konektor">Konektor</a>
+        <a href="#instalasi">Instalasi</a>
+        <a href="#glosarium">Glosarium</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-kicker">Referensi Teknis</span>
+    <h1>Kabel Fiber Optik</h1>
+    <p class="hero-lede">
+      Media transmisi yang mengirim data dalam bentuk pulsa cahaya melalui serat
+      kaca ultra-halus — bukan sinyal listrik. Referensi ringkas untuk memahami
+      struktur, cara kerja, jenis, dan hal-hal praktis di lapangan.
+    </p>
+    <div class="hero-cta">
+      <a href="#pengertian" class="btn">Mulai baca →</a>
+      <a href="#jenis" class="btn btn-outline">Lihat jenis kabel</a>
+    </div>
+  </div>
+</section>
+
+<main id="main">
+
+  <section id="pengertian">
+    <div class="section-inner">
+      <span class="sec-num">01 — Dasar</span>
+      <h2>Apa Itu Kabel Fiber Optik</h2>
+      <p class="lede">
+        Kabel fiber optik (serat optik) adalah media transmisi yang terbuat dari
+        serat kaca silika murni atau plastik, berdiameter sekitar 125 mikrometer
+        — sedikit lebih tebal dari sehelai rambut manusia.
+      </p>
+      <p>
+        Data dikirim sebagai pulsa cahaya yang merambat di dalam serat. Satu helai
+        serat dapat membawa puluhan hingga ratusan kanal informasi sekaligus melalui
+        teknik <em>wavelength division multiplexing</em> (WDM).
+      </p>
+      <p>
+        Cahaya dipandu di dalam inti serat melalui fenomena <strong>pemantulan
+        internal total</strong>. Pemantulan ini terjadi karena indeks bias inti
+        (core) lebih tinggi daripada indeks bias lapisan cladding di sekelilingnya.
+        Inti umumnya berindeks sekitar <code>1,47</code>, sedangkan cladding sekitar
+        <code>1,46</code> — selisih kecil ini sudah cukup untuk "mengurung" cahaya
+        agar tetap merambat sepanjang serat.
+      </p>
+      <h3>Ukuran dan kapasitas</h3>
+      <p>
+        Ukuran serat biasanya ditulis sebagai <code>core/cladding</code> dalam
+        mikrometer. Standar yang umum dijumpai adalah <code>9/125 µm</code> untuk
+        single mode, dan <code>50/125 µm</code> atau <code>62,5/125 µm</code> untuk
+        multi mode. Kapasitas satu helai serat modern mencapai <code>10 Gbps</code>
+        hingga <code>400 Gbps</code> per panjang gelombang, dan masih dapat
+        diperbesar dengan DWDM.
+      </p>
+      <p>
+        Peran utamanya adalah sebagai tulang punggung jaringan telekomunikasi —
+        mulai dari backbone antar kota, layanan FTTH di rumah pelanggan, koneksi
+        antar data center, hingga jaringan kabel laut antar benua.
+      </p>
+    </div>
+  </section>
+
+  <section id="struktur">
+    <div class="section-inner">
+      <span class="sec-num">02 — Anatomi</span>
+      <h2>Struktur Kabel</h2>
+      <p class="lede">
+        Kabel fiber optik tersusun berlapis dari dalam ke luar. Setiap lapisan
+        punya fungsi spesifik: memandu cahaya, melindungi serat dari gesekan,
+        menahan beban tarik, dan menjaga dari gangguan lingkungan.
+      </p>
+      <div class="struktur">
+        <figure>
+          <svg viewBox="0 0 200 200" role="img" aria-label="Diagram penampang kabel fiber optik: jaket hitam dengan titik aramid kuning, buffer tube, coating, cladding, dan core kuning di tengah">
+            <circle cx="100" cy="100" r="95" fill="#0a0a0a"/>
+            <g fill="#ffe600">
+              <circle cx="100" cy="18" r="3.5"/>
+              <circle cx="158" cy="42" r="3.5"/>
+              <circle cx="182" cy="100" r="3.5"/>
+              <circle cx="158" cy="158" r="3.5"/>
+              <circle cx="100" cy="182" r="3.5"/>
+              <circle cx="42" cy="158" r="3.5"/>
+              <circle cx="18" cy="100" r="3.5"/>
+              <circle cx="42" cy="42" r="3.5"/>
+            </g>
+            <circle cx="100" cy="100" r="70" fill="#0a0a0a"/>
+            <circle cx="100" cy="100" r="65" fill="#e8e4d8"/>
+            <circle cx="100" cy="100" r="55" fill="#0a0a0a"/>
+            <circle cx="100" cy="100" r="50" fill="#e8e4d8"/>
+            <circle cx="100" cy="100" r="40" fill="#0a0a0a"/>
+            <circle cx="100" cy="100" r="35" fill="#e8e4d8"/>
+            <circle cx="100" cy="100" r="15" fill="#ffe600" stroke="#0a0a0a" stroke-width="3"/>
+          </svg>
+          <figcaption>
+            Penampang kabel FO. Titik kuning = aramid. Lingkaran kuning di
+            tengah = core. Skala tidak proporsional.
+          </figcaption>
+        </figure>
+        <dl>
+          <dt>1 — Core (inti)</dt>
+          <dd>Serat kaca tempat cahaya merambat. Diameternya 8–10 µm pada single mode, atau 50/62,5 µm pada multi mode.</dd>
+          <dt>2 — Cladding (selubung)</dt>
+          <dd>Lapisan kaca dengan indeks bias lebih rendah, memantulkan cahaya kembali ke core.</dd>
+          <dt>3 — Coating / buffer</dt>
+          <dd>Lapisan akrilat atau plastik berwarna untuk melindungi serat dari goresan dan kelembapan.</dd>
+          <dt>4 — Buffer tube (loose tube)</dt>
+          <dd>Tabung plastik berisi serat dan gel thixotropic untuk mencegah masuknya air.</dd>
+          <dt>5 — Strength member</dt>
+          <dd>Benang aramid (Kevlar) atau batang FRP yang menahan beban tarik saat penarikan kabel.</dd>
+          <dt>6 — Outer jacket</dt>
+          <dd>Jaket luar dari PE, PVC, atau LSZH yang melindungi dari UV, gesekan, dan bahan kimia.</dd>
+        </dl>
+      </div>
+      <p>
+        Pada kabel <strong>armored</strong>, ditambahkan lapisan pita baja
+        (<em>corrugated steel tape</em>) untuk melindungi dari gigitan hewan
+        pengerat dan tekanan tanah — umum dipakai pada kabel tanam langsung
+        (<em>direct burial</em>). Kabel <strong>indoor</strong> biasanya lebih
+        ramping dan menggunakan jaket LSZH (<em>Low Smoke Zero Halogen</em>)
+        yang tidak mengeluarkan gas beracun saat terbakar.
+      </p>
+    </div>
+  </section>
+
+  <section id="cara-kerja">
+    <div class="section-inner">
+      <span class="sec-num">03 — Prinsip</span>
+      <h2>Cara Kerja</h2>
+      <p class="lede">
+        Pengiriman data melalui fiber optik berlangsung dalam tiga tahap: mengubah
+        data menjadi cahaya, merambatkan cahaya di dalam serat, lalu mengubahnya
+        kembali menjadi data di ujung penerima.
+      </p>
+      <ol class="numbered">
+        <li>
+          <strong>Modulasi sinyal.</strong> Transmitter (laser dioda atau LED)
+          mengubah sinyal listrik berisi data menjadi pulsa cahaya. Nyala berarti
+          bit 1, mati berarti bit 0. Pada sistem canggih, intensitas dan fase
+          cahaya juga dimodulasi untuk menambah kapasitas.
+        </li>
+        <li>
+          <strong>Perambatan di dalam serat.</strong> Cahaya masuk ke core dengan
+          sudut tertentu dan terus dipantulkan secara total di dinding cladding.
+          Sepanjang perjalanan, sinyal mengalami atenuasi (melemah) dan dispersi
+          (pulsa melebar).
+        </li>
+        <li>
+          <strong>Deteksi di receiver.</strong> Photodiode di ujung penerima
+          mengubah pulsa cahaya kembali menjadi sinyal listrik, lalu rangkaian
+          digital menginterpretasikannya sebagai data.
+        </li>
+      </ol>
+      <p>
+        Dua fenomena yang membatasi jarak dan kecepatan adalah atenuasi dan
+        dispersi. Atenuasi dinyatakan dalam dB/km — pada single mode sekitar
+        <code>0,35 dB/km</code> di panjang gelombang 1310 nm dan
+        <code>0,20 dB/km</code> di 1550 nm; pada multi mode sekitar
+        <code>3 dB/km</code> di 850 nm. Adapun dispersi adalah pelebaran pulsa
+        akibat perbedaan kecepatan cahaya antar mode atau antar panjang
+        gelombang, dan pada multi mode ia menjadi faktor pembatas jarak yang
+        utama.
+      </p>
+      <p>
+        Jendela panjang gelombang yang umum dipakai adalah 850 nm, 1310 nm,
+        1550 nm, dan 1625 nm. Semakin panjang gelombangnya, semakin kecil
+        redaman di dalam serat kaca.
+      </p>
+      <p class="note">
+        <strong>Catatan</strong>
+        Hukum pemantulan yang mendasari FO: n₁ · sin θ₁ = n₂ · sin θ₂.
+        Pemantulan internal total terjadi ketika θ₁ &gt; θ<sub>kritis</sub> =
+        arcsin(n₂ / n₁).
+      </p>
+    </div>
+  </section>
+
+  <section id="jenis">
+    <div class="section-inner">
+      <span class="sec-num">04 — Klasifikasi</span>
+      <h2>Jenis Kabel Fiber Optik</h2>
+      <p class="lede">
+        Kabel FO dikelompokkan berdasarkan mode perambatan cahaya, konstruksi,
+        dan lokasi pemasangannya.
+      </p>
+
+      <h3>Single Mode vs Multi Mode</h3>
+      <p>
+        <strong>Single Mode Fiber (SMF)</strong> memiliki core sangat kecil
+        (8–10 µm) sehingga hanya satu mode cahaya yang merambat. Sumbernya laser.
+        Cocok untuk jarak jauh hingga 100 km lebih dengan bandwidth sangat besar.
+        Sedangkan <strong>Multi Mode Fiber (MMF)</strong> berukuran core lebih
+        besar (50 atau 62,5 µm) sehingga banyak mode cahaya merambat sekaligus;
+        sumbernya LED atau VCSEL. Lebih ekonomis untuk jarak pendek — sekitar
+        300 m hingga 2 km.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Kategori</th><th>Diameter Core</th><th>Warna Jaket</th>
+              <th>Kecepatan Umum</th><th>Jarak Maks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>OM1</td><td>62,5/125 µm</td><td>Oranye</td><td>1 Gbps</td><td>±275 m</td></tr>
+            <tr><td>OM2</td><td>50/125 µm</td><td>Oranye</td><td>1–10 Gbps</td><td>±550 m</td></tr>
+            <tr><td>OM3</td><td>50/125 µm</td><td>Aqua</td><td>10–40 Gbps</td><td>±300 m</td></tr>
+            <tr><td>OM4</td><td>50/125 µm</td><td>Aqua / violet</td><td>40–100 Gbps</td><td>±550 m</td></tr>
+            <tr><td>OM5</td><td>50/125 µm</td><td>Lime</td><td>40–100 Gbps (WDM)</td><td>±550 m</td></tr>
+            <tr><td>OS1 / OS2</td><td>9/125 µm</td><td>Kuning</td><td>10G – 400G</td><td>10–100+ km</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Berdasarkan Konstruksi</h3>
+      <ul class="plain-list">
+        <li><strong>Simplex dan duplex.</strong> Simplex berisi satu serat untuk transmisi satu arah. Duplex (zipcord) berisi dua serat berdampingan untuk komunikasi dua arah (TX dan RX).</li>
+        <li><strong>Drop cable (FTTH).</strong> Kabel tipis dan fleksibel untuk penarikan dari ODP ke rumah pelanggan. Biasanya berisi 1–2 serat dengan strength member FRP di kedua sisi.</li>
+        <li><strong>Distribution cable.</strong> Berisi banyak serat dalam beberapa loose tube; dipakai untuk jalur distribusi antar titik di dalam gedung atau antar ODC–ODP.</li>
+        <li><strong>ADSS.</strong> <em>All-Dielectric Self-Supporting</em> — kabel tanpa logam yang dipasang menggantung di tiang listrik atau SUTET. Kuat menahan beban angin dan es.</li>
+        <li><strong>OPGW.</strong> <em>Optical Ground Wire</em> — serat optik ditanam di dalam kawat tanah saluran transmisi listrik tegangan tinggi. Berfungsi ganda: penangkal petir dan komunikasi.</li>
+        <li><strong>Submarine cable.</strong> Kabel laut antar benua dengan lapisan armoring baja berat, tahan tekanan kedalaman ribuan meter dan arus laut.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="warna">
+    <div class="section-inner">
+      <span class="sec-num">05 — Standar</span>
+      <h2>Kode Warna Serat</h2>
+      <p class="lede">
+        Standar TIA/EIA-598 menetapkan dua belas warna untuk mengidentifikasi
+        setiap serat di dalam tube, sehingga proses splicing dan troubleshooting
+        menjadi lebih mudah.
+      </p>
+      <ol class="swatches">
+        <li><span class="sw" style="background:#1e6fd9"></span><span class="num">01</span><span class="name">Biru</span></li>
+        <li><span class="sw" style="background:#f97316"></span><span class="num">02</span><span class="name">Oranye</span></li>
+        <li><span class="sw" style="background:#22c55e"></span><span class="num">03</span><span class="name">Hijau</span></li>
+        <li><span class="sw" style="background:#92400e"></span><span class="num">04</span><span class="name">Coklat</span></li>
+        <li><span class="sw" style="background:#94a3b8"></span><span class="num">05</span><span class="name">Abu-abu</span></li>
+        <li><span class="sw" style="background:#f1f5f9"></span><span class="num">06</span><span class="name">Putih</span></li>
+        <li><span class="sw" style="background:#dc2626"></span><span class="num">07</span><span class="name">Merah</span></li>
+        <li><span class="sw" style="background:#0f172a"></span><span class="num">08</span><span class="name">Hitam</span></li>
+        <li><span class="sw" style="background:#eab308"></span><span class="num">09</span><span class="name">Kuning</span></li>
+        <li><span class="sw" style="background:#8b5cf6"></span><span class="num">10</span><span class="name">Violet</span></li>
+        <li><span class="sw" style="background:#ec4899"></span><span class="num">11</span><span class="name">Pink</span></li>
+        <li><span class="sw" style="background:#06b6d4"></span><span class="num">12</span><span class="name">Aqua</span></li>
+      </ol>
+      <p class="note">
+        <strong>Catatan</strong>
+        Pola dua belas warna berulang untuk serat ke-13 dan seterusnya, biasanya
+        ditandai pita (<em>tracer</em>) atau tanda khusus. Pada kabel multi-tube,
+        tiap loose tube juga diberi warna berbeda mengikuti urutan yang sama,
+        sehingga penomoran serat dilakukan dua tingkat: nomor tube → nomor serat.
+      </p>
+    </div>
+  </section>
+
+  <section id="kelebihan">
+    <div class="section-inner">
+      <span class="sec-num">06 — Evaluasi</span>
+      <h2>Kelebihan &amp; Kekurangan</h2>
+      <p class="lede">
+        Fiber optik unggul di banyak sisi, tetapi punya keterbatasan yang perlu
+        dipahami sebelum memilihnya sebagai media transmisi.
+      </p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h3>Kelebihan</h3>
+          <ul>
+            <li><strong>Bandwidth besar.</strong> Mampu membawa data jauh lebih banyak dibanding kabel tembaga.</li>
+            <li><strong>Jarak jauh.</strong> Redaman rendah, repeater bisa berjarak puluhan kilometer.</li>
+            <li><strong>Bebas EMI.</strong> Membawa cahaya, bukan listrik — tidak terpengaruh medan elektromagnetik.</li>
+            <li><strong>Keamanan data.</strong> Sulit disadap tanpa terdeteksi penurunan daya.</li>
+            <li><strong>Ringan dan kecil.</strong> Memudahkan instalasi di duct yang padat.</li>
+            <li><strong>Tidak berkarat.</strong> Bahan kaca tidak mengalami korosi.</li>
+            <li><strong>Aman dari percikan api.</strong> Tidak ada risiko korsleting.</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h3>Kekurangan</h3>
+          <ul>
+            <li><strong>Peralatan mahal.</strong> Splicer, OTDR, dan perangkat aktif optik relatif mahal.</li>
+            <li><strong>Rentan tekukan tajam.</strong> Melebihi radius bending minimum dapat mematahkan serat.</li>
+            <li><strong>Perlu tenaga ahli.</strong> Splicing dan terminasi membutuhkan keterampilan khusus.</li>
+            <li><strong>Tidak bisa diberi daya listrik.</strong> Perangkat di ujung butuh catu daya terpisah.</li>
+            <li><strong>Perbaikan butuh alat khusus.</strong> Troubleshooting memerlukan OTDR dan VFL.</li>
+            <li><strong>Konektor mudah kotor.</strong> Debu sekecil mikron dapat menimbulkan loss besar.</li>
+            <li><strong>Getas pada suhu ekstrem</strong> bila jaket tidak sesuai spesifikasi.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="perbandingan">
+    <div class="section-inner">
+      <span class="sec-num">07 — Komparasi</span>
+      <h2>Perbandingan Media</h2>
+      <p class="lede">
+        Memilih media transmisi berarti menimbang trade-off antara biaya,
+        kapasitas, dan kondisi lingkungan.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Aspek</th>
+              <th>Fiber Optik</th>
+              <th>Tembaga (UTP)</th>
+              <th>Coaxial</th>
+              <th>Wireless</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Bandwidth</td><td>10 Gbps – 100+ Gbps</td><td>1 – 10 Gbps</td><td>100 Mbps – 1 Gbps</td><td>Bervariasi</td></tr>
+            <tr><td>Jarak tanpa repeater</td><td>10 – 100 km</td><td>±100 m</td><td>200 – 500 m</td><td>100 m – 50 km</td></tr>
+            <tr><td>Kekebalan EMI</td><td>Sangat baik</td><td>Rendah</td><td>Sedang</td><td>Rentan</td></tr>
+            <tr><td>Keamanan data</td><td>Tinggi</td><td>Sedang</td><td>Sedang</td><td>Rendah</td></tr>
+            <tr><td>Biaya kabel/meter</td><td>Sedang</td><td>Rendah</td><td>Rendah</td><td>N/A</td></tr>
+            <tr><td>Biaya perangkat</td><td>Tinggi</td><td>Rendah</td><td>Sedang</td><td>Tinggi</td></tr>
+            <tr><td>Kerumitan instalasi</td><td>Perlu keahlian</td><td>Mudah</td><td>Mudah</td><td>Sedang</td></tr>
+            <tr><td>Korosi / karat</td><td>Tidak</td><td>Ya</td><td>Ya</td><td>N/A</td></tr>
+            <tr><td>Cocok untuk</td><td>Backbone, FTTH, data center</td><td>LAN kantor, rumah</td><td>TV kabel, CCTV analog</td><td>Mobile, area sulit kabel</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Ringkasnya: pilih fiber optik ketika butuh jarak jauh, bandwidth besar,
+        area dengan EMI tinggi, atau instalasi jangka panjang. Pilih tembaga jika
+        anggaran terbatas, jarak pendek (&lt;100 m), dan perangkat masih berbasis
+        RJ45/PoE. Pilih wireless jika kabel sulit dijangkau, mobilitas pengguna
+        tinggi, atau sebagai backup link.
+      </p>
+    </div>
+  </section>
+
+  <section id="aplikasi">
+    <div class="section-inner">
+      <span class="sec-num">08 — Penerapan</span>
+      <h2>Aplikasi di Lapangan</h2>
+      <p class="lede">
+        Hampir seluruh infrastruktur digital modern bergantung pada serat optik.
+        Beberapa penerapan yang paling umum:
+      </p>
+      <ul class="plain-list">
+        <li><strong>Backbone internet</strong> — jaringan tulang punggung ISP antar kota dan antar negara, termasuk kabel laut.</li>
+        <li><strong>FTTH / FTTx</strong> — layanan internet rumah langsung serat optik hingga ke dalam rumah pelanggan.</li>
+        <li><strong>Data center</strong> — interkoneksi antar server dan rack dengan kecepatan 25G hingga 400G per link.</li>
+        <li><strong>CCTV dan keamanan</strong> — kamera IP jarak jauh dengan transmisi video tanpa gangguan interferensi.</li>
+        <li><strong>Industri dan SCADA</strong> — lingkungan dengan medan elektromagnetik tinggi seperti pabrik dan gardu listrik.</li>
+        <li><strong>Medis</strong> — endoskopi, sensor tekanan, dan peralatan bedah berbasis serat optik.</li>
+        <li><strong>BTS dan radio</strong> — fronthaul/backhaul antara menara BTS dan pusat pengolahan jaringan.</li>
+        <li><strong>Sensor dan riset</strong> — Fiber Bragg Grating untuk memantau regangan jembatan, pipa, dan suhu.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="konektor">
+    <div class="section-inner">
+      <span class="sec-num">09 — Terminasi</span>
+      <h2>Konektor &amp; Alat Ukur</h2>
+      <p class="lede">
+        Konektor menentukan kualitas sambungan; alat ukur memastikan kualitas
+        tersebut terpenuhi saat instalasi maupun saat troubleshooting.
+      </p>
+
+      <h3>Jenis Konektor</h3>
+      <ul class="plain-list">
+        <li><strong>SC — Subscriber Connector.</strong> Bentuk persegi, sistem push-pull. Paling umum di jaringan FTTH Indonesia.</li>
+        <li><strong>LC — Lucent Connector.</strong> Ukuran kecil (SFF), latch seperti RJ45. Dominan di data center.</li>
+        <li><strong>ST — Straight Tip.</strong> Sistem bayonet putar. Banyak digunakan pada jaringan lama multi mode.</li>
+        <li><strong>FC — Ferrule Connector.</strong> Pengunci ulir, sangat stabil. Umum di perangkat telekomunikasi dan laboratorium.</li>
+      </ul>
+
+      <h3>Alat Ukur dan Alat Bantu</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Alat</th><th>Fungsi</th><th>Kapan Dipakai</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Fusion splicer</td><td>Menyambung dua serat dengan peleburan listrik</td><td>Menyambung kabel di ODP/closure</td></tr>
+            <tr><td>Fiber cleaver</td><td>Memotong ujung serat dengan sudut 90° presisi</td><td>Sebelum splicing atau terminasi</td></tr>
+            <tr><td>OTDR</td><td>Mengukur redaman &amp; memetakan lokasi gangguan</td><td>Commissioning &amp; troubleshooting</td></tr>
+            <tr><td>OPM (power meter)</td><td>Mengukur daya optik yang diterima</td><td>Cek level sinyal di ujung link</td></tr>
+            <tr><td>VFL (visual fault locator)</td><td>Menembakkan laser merah untuk menemukan titik patah</td><td>Pencarian kerusakan cepat</td></tr>
+            <tr><td>OLTS / light source</td><td>Mengukur total loss end-to-end</td><td>Uji kelayakan link sebelum aktif</td></tr>
+            <tr><td>Fiber cleaner</td><td>Membersihkan ferrule konektor</td><td>Setiap sebelum menyambungkan konektor</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="instalasi">
+    <div class="section-inner">
+      <span class="sec-num">10 — Praktik</span>
+      <h2>Instalasi &amp; Perawatan</h2>
+      <p class="lede">
+        Kesalahan kecil saat instalasi bisa berujung pada redaman besar atau
+        serat patah di kemudian hari. Beberapa hal yang perlu diperhatikan:
+      </p>
+      <ol class="numbered">
+        <li><strong>Jaga radius bending.</strong> Minimal 10–20× diameter kabel. Untuk drop cable biasanya ≥ 15 mm saat terpasang.</li>
+        <li><strong>Jangan melebihi batas tarik.</strong> Ikuti rating kabel (umumnya 100–2700 N). Gunakan grip penarik; jangan menarik langsung dari jaket.</li>
+        <li><strong>Bersihkan sebelum koneksi.</strong> Debu sekecil 1 µm bisa menambah loss signifikan. Selalu gunakan <em>one-click cleaner</em>.</li>
+        <li><strong>Hindari tekukan 90°.</strong> Gunakan elbow atau tray dengan radius memadai saat kabel berbelok.</li>
+        <li><strong>Beri slack (cadangan).</strong> Sisakan 5–10 m di tiap closure untuk kebutuhan perbaikan di masa depan.</li>
+        <li><strong>Labeli setiap serat.</strong> Ikuti kode warna dan beri label pada tiap tube dan port — hemat waktu saat troubleshooting.</li>
+        <li><strong>Lindungi dari UV dan hewan.</strong> Untuk outdoor gunakan kabel UV-resistant; untuk tanam langsung gunakan armored.</li>
+        <li><strong>Dokumentasikan hasil ukur.</strong> Simpan baseline OTDR dan power meter agar kerusakan baru mudah dibandingkan.</li>
+      </ol>
+      <p class="note">
+        <strong>Standar</strong>
+        ITU-T G.652 untuk single mode standar (paling umum dipakai), G.655 untuk
+        non-zero dispersion shifted fiber pada DWDM jarak jauh, dan G.657 untuk
+        single mode tahan tekukan (<em>bending insensitive</em>) yang ideal untuk
+        FTTH. Untuk kode warna serat, gunakan acuan TIA/EIA-598.
+      </p>
+    </div>
+  </section>
+
+  <section id="glosarium">
+    <div class="section-inner">
+      <span class="sec-num">11 — Referensi</span>
+      <h2>Glosarium</h2>
+      <p class="lede">
+        Istilah teknis yang sering muncul saat membaca spesifikasi atau melakukan
+        troubleshooting jaringan optik.
+      </p>
+      <dl class="glossary">
+        <div><dt>Atenuasi</dt><dd>Penurunan daya sinyal optik sepanjang serat, dinyatakan dalam dB/km.</dd></div>
+        <div><dt>Bandwidth</dt><dd>Rentang frekuensi yang dapat dibawa; pada FO diukur dalam Gbps atau THz·km.</dd></div>
+        <div><dt>Cladding</dt><dd>Lapisan kaca di luar core dengan indeks bias lebih rendah, memantulkan cahaya kembali ke core.</dd></div>
+        <div><dt>Core</dt><dd>Inti serat tempat cahaya merambat; diameter menentukan single mode atau multi mode.</dd></div>
+        <div><dt>Dispersi</dt><dd>Pelebaran pulsa akibat perbedaan kecepatan cahaya, membatasi jarak dan bit rate.</dd></div>
+        <div><dt>DWDM</dt><dd><em>Dense Wavelength Division Multiplexing</em> — menggabungkan puluhan panjang gelombang dalam satu serat.</dd></div>
+        <div><dt>FTTH</dt><dd><em>Fiber to the Home</em> — arsitektur jaringan yang menghantarkan serat langsung ke rumah pelanggan.</dd></div>
+        <div><dt>Fusion splicer</dt><dd>Alat pelebur dua ujung serat dengan busur listrik, menghasilkan sambungan dengan loss sangat rendah.</dd></div>
+        <div><dt>OTDR</dt><dd><em>Optical Time Domain Reflectometer</em> — mengukur redaman dan memetakan gangguan sepanjang serat.</dd></div>
+        <div><dt>Pigtail</dt><dd>Potongan serat pendek dengan konektor di satu ujung, disambung ke kabel utama via splicing.</dd></div>
+        <div><dt>Splicing</dt><dd>Proses menyambung dua serat optik secara permanen (fusion) atau mekanis.</dd></div>
+        <div><dt>VFL</dt><dd><em>Visual Fault Locator</em> — laser merah untuk menemukan titik patah atau tekukan tajam.</dd></div>
+        <div><dt>WDM</dt><dd><em>Wavelength Division Multiplexing</em> — teknik mengirim banyak sinyal pada panjang gelombang berbeda.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">FO · Fiber Optik</div>
+    <p class="footer-text">
+      Referensi teknis tentang kabel fiber optik: pengertian, struktur, cara
+      kerja, jenis, kode warna, kelebihan, perbandingan media, aplikasi,
+      konektor, alat ukur, dan tips instalasi.
+    </p>
+  </div>
+  <div class="colophon">
+    © 2026 · Spesifikasi teknis dapat berbeda tergantung produsen dan standar yang digunakan.
+  </div>
+</footer>
+
+<script>
+  /* Tutup menu mobile setelah link diklik */
+  document.querySelectorAll('.menu nav a').forEach(function(a){
+    a.addEventListener('click', function(){
+      var menu = document.querySelector('.menu');
+      if (menu) menu.removeAttribute('open');
+    });
+  });
+</script>
+</body>
+  </html>
