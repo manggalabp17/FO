@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://manggalabp17.github.io/FO/sitemap.xml

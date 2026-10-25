@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<rect width="1200" height="630" fill="#0a0a0a"/>
+<rect width="1200" height="12" fill="#ffe600"/><rect y="618" width="1200" height="12" fill="#ffe600"/>
+<text x="100" y="220" font-family="monospace" font-size="120" font-weight="800" fill="#ffe600">FO</text>
+<text x="100" y="300" font-family="monospace" font-size="36" font-weight="700" fill="#f0ede4">KABEL FIBER OPTIK</text>
+<text x="100" y="360" font-family="monospace" font-size="20" fill="#888">struktur - cara kerja - jenis - konektor - tools</text>
+<rect x="100" y="400" width="180" height="50" fill="#ffe600"/>
+<text x="190" y="432" font-family="monospace" font-size="18" font-weight="800" fill="#0a0a0a" text-anchor="middle">MULAI BACA</text>
+<rect x="300" y="400" width="140" height="50" fill="none" stroke="#f0ede4" stroke-width="3"/>
+<text x="370" y="432" font-family="monospace" font-size="18" font-weight="800" fill="#f0ede4" text-anchor="middle">TOOLS</text>
+<circle cx="950" cy="315" r="120" fill="none" stroke="#ffe600" stroke-width="4"/>
+<circle cx="950" cy="315" r="90" fill="none" stroke="#ffe600" stroke-width="2" opacity="0.5"/>
+<circle cx="950" cy="315" r="25" fill="#ffe600"/>
+<line x1="830" y1="315" x2="900" y2="280" stroke="#ff3300" stroke-width="3"/>
+<line x1="900" y1="280" x2="1000" y2="350" stroke="#ff3300" stroke-width="3"/>
+<line x1="1000" y1="350" x2="1070" y2="315" stroke="#ff3300" stroke-width="3"/>
+</svg>

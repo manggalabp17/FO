@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffe600">
+<title>FO — Kabel Fiber Optik</title>
+<meta name="description" content="Kabel fiber optik: struktur, cara kerja, jenis, warna, konektor, alat ukur, instalasi, tools.">
+<meta name="author" content="manggalabp17">
+<link rel="canonical" href="https://manggalabp17.github.io/FO/">
+<link rel="icon" href="assets/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FO — Kabel Fiber Optik">
+<meta property="og:description" content="Kabel fiber optik: struktur, cara kerja, jenis, tools.">
+<meta property="og:url" content="https://manggalabp17.github.io/FO/">
+<meta property="og:image" content="https://manggalabp17.github.io/FO/assets/og-image.svg">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"FO — Kabel Fiber Optik","author":{"@type":"Person","name":"manggalabp17"},"inLanguage":"id-ID","about":["fiber optik","telekomunikasi","FTTH"]}</script>
+<style>
+:root{--bg:#f0ede4;--fill:#e8e4d8;--fg:#0a0a0a;--muted:#555;--accent:#ffe600;--hot:#ff3300;--border:#0a0a0a;--mono:ui-monospace,Menlo,Consolas,monospace;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+section[id]{scroll-margin-top:64px}
+a{color:var(--fg);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{background:var(--accent);text-decoration:none}
+strong{font-weight:700}em{font-style:italic}
+code{font-family:var(--mono);font-size:.85em;background:var(--fg);color:var(--accent);padding:1px 6px}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--hot);z-index:200;transition:width .1s}
+header{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:4px solid var(--border)}
+.nav{display:flex;align-items:center;gap:8px;height:56px;max-width:1000px;margin:0 auto;padding:0 16px}
+.brand{font-family:var(--mono);font-weight:800;font-size:14px;text-decoration:none;color:var(--fg);display:flex;align-items:center;gap:8px}
+.brand::before{content:"";width:16px;height:16px;background:var(--accent);border:3px solid var(--border)}
+.brand:hover{background:none}
+.nav-links{display:flex;gap:0;flex:1;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;padding:8px 5px;color:var(--fg);border-bottom:3px solid transparent;white-space:nowrap;transition:all .12s}
+.nav-links a:hover{background:none;border-bottom-color:var(--hot)}
+.nav-links a.active{border-bottom-color:var(--hot);font-weight:800}
+.menu-btn{display:none;font-family:var(--mono);font-size:18px;font-weight:800;padding:4px 10px;background:var(--fg);color:var(--accent);border:3px solid var(--border);cursor:pointer;order:-1}
+.hero{background:var(--accent);border-bottom:4px solid var(--border);padding:48px 16px;text-align:center}
+.hero h1{font-family:var(--mono);font-size:clamp(2rem,8vw,4rem);font-weight:800;letter-spacing:-.04em;text-transform:uppercase;margin-bottom:12px}
+.hero p{font-size:clamp(14px,4vw,18px);max-width:36em;margin:0 auto 20px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:10px 18px;background:var(--fg);color:var(--accent);border:3px solid var(--border);box-shadow:5px 5px 0 var(--border);text-decoration:none;cursor:pointer;transition:all .08s}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--border)}
+.btn-outline{background:transparent;color:var(--fg)}
+.btn-outline:hover{background:var(--fg);color:var(--accent)}
+main{max-width:1000px;margin:0 auto;padding:0 16px}
+section{padding:40px 0;border-bottom:3px solid var(--border)}
+section:last-child{border-bottom:none}
+.sec-num{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:var(--fg);color:var(--accent);padding:4px 10px;margin-bottom:12px}
+section h2{font-family:var(--mono);font-size:clamp(1.5rem,5vw,2.25rem);font-weight:800;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:16px}
+section h3{font-family:var(--mono);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin:24px 0 10px;padding-bottom:4px;border-bottom:2px solid var(--border);display:inline-block}
+section p{font-size:15px;margin-bottom:12px;max-width:42em}
+section p.lede{font-size:16px;color:var(--muted);margin-bottom:20px}
+.table-wrap{overflow-x:auto;border:3px solid var(--border);margin:16px 0;background:var(--bg)}
+table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12px;min-width:400px}
+thead th{background:var(--fg);color:var(--accent);text-align:left;padding:8px 10px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;border-right:2px solid var(--border)}
+thead th:last-child{border-right:none}
+tbody td{padding:8px 10px;border-top:2px solid var(--border);border-right:2px solid var(--border)}
+tbody td:last-child{border-right:none}
+tbody td:first-child{font-weight:700}
+tbody tr:nth-child(even) td{background:rgba(0,0,0,.03)}
+ul.bullets{list-style:none;padding:0;margin:0 0 12px;max-width:42em}
+ul.bullets li{position:relative;padding:6px 0 6px 20px;border-bottom:1px solid var(--border);font-size:14px}
+ul.bullets li:last-child{border-bottom:none}
+ul.bullets li::before{content:"";position:absolute;left:0;top:12px;width:8px;height:8px;background:var(--accent);border:2px solid var(--border)}
+ol.num{counter-reset:n;list-style:none;padding:0;margin:16px 0;max-width:42em}
+ol.num li{counter-increment:n;position:relative;padding:12px 0 12px 44px;border-top:2px solid var(--border);font-size:14px}
+ol.num li:last-child{border-bottom:2px solid var(--border)}
+ol.num li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:12px;width:32px;height:32px;display:grid;place-items:center;background:var(--accent);border:2px solid var(--border);font-family:var(--mono);font-size:12px;font-weight:800}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:16px 0;border:3px solid var(--border)}
+.grid-2>div{padding:16px}
+.grid-2>div:first-child{border-right:3px solid var(--border)}
+.note{background:var(--accent);border:3px solid var(--border);box-shadow:5px 5px 0 var(--border);padding:14px 16px;margin:16px 0;font-size:14px;max-width:42em}
+.note strong{font-family:var(--mono);text-transform:uppercase;font-size:11px;letter-spacing:.06em;display:inline-block;padding:2px 6px;background:var(--fg);color:var(--accent);margin-bottom:6px}
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;list-style:none;padding:0;margin:16px 0}
+.swatches li{border:2px solid var(--border);padding:4px;background:var(--bg)}
+.swatches .sw{display:block;height:40px;margin-bottom:4px;border:2px solid var(--border)}
+.swatches .n{display:block;font-family:var(--mono);font-size:9px;font-weight:700;color:var(--muted)}
+.swatches .nm{display:block;font-family:var(--mono);font-size:9px;font-weight:800;text-transform:uppercase}
+.gloss{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0}
+.gloss>div{border:2px solid var(--border);padding:10px 12px;background:var(--bg)}
+.gloss dt{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:800;background:var(--fg);color:var(--accent);padding:2px 6px;margin-bottom:4px}
+.gloss dd{font-size:13px;color:var(--muted)}
+.tool{border:3px solid var(--border);background:var(--bg);box-shadow:5px 5px 0 var(--border);padding:16px;margin:16px 0;max-width:480px}
+.tool label{display:block;font-family:var(--mono);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.tool select,.tool input{width:100%;padding:8px 10px;border:3px solid var(--border);background:var(--bg);color:var(--fg);font-family:var(--mono);font-size:13px;margin-bottom:12px}
+.tool .result{padding:12px;background:var(--fill);border:2px solid var(--border);font-family:var(--mono);font-size:13px;display:none}
+.tab-btn{flex:1;font-family:var(--mono);font-size:10px;font-weight:800;text-transform:uppercase;padding:8px 4px;background:var(--bg);color:var(--fg);border:none;border-right:3px solid var(--border);cursor:pointer;transition:all .12s}
+.tab-btn:last-child{border-right:none}
+.tab-btn:hover{background:var(--accent)}
+.tab-btn.active{background:var(--fg);color:var(--accent)}
+.quiz{max-width:420px;margin:16px auto;border:3px solid var(--border);background:var(--fill);box-shadow:5px 5px 0 var(--border);padding:20px}
+.quiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-family:var(--mono);font-size:10px;color:var(--muted)}
+.quiz-bar{height:6px;background:var(--bg);border:2px solid var(--border);margin-bottom:12px;overflow:hidden}
+.quiz-bar-fill{height:100%;background:var(--accent);width:0;transition:width .3s}
+.quiz-color{width:80px;height:80px;border-radius:50%;border:3px solid var(--border);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:24px;font-weight:800}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px}
+.quiz-opt{padding:10px 8px;border:3px solid var(--border);background:var(--bg);font-family:var(--mono);font-size:12px;font-weight:700;cursor:pointer;text-align:center;transition:all .1s}
+.quiz-opt:hover{background:var(--accent)}
+.quiz-opt.correct{background:#22c55e;color:#fff;border-color:#16a34a}
+.quiz-opt.wrong{background:#dc2626;color:#fff;border-color:#b91c1c}
+.quiz-opt:disabled{cursor:default}
+.quiz-msg{text-align:center;font-family:var(--mono);font-size:12px;font-weight:800;margin-bottom:8px;min-height:18px}
+.quiz-score{display:flex;gap:16px;justify-content:center;font-family:var(--mono);font-size:11px}
+.quiz-score span{padding:4px 8px;border:2px solid var(--border)}
+.quiz-score .ok{background:#22c55e;color:#fff}
+.quiz-score .no{background:#dc2626;color:#fff}
+.quiz-final{text-align:center;padding:16px}
+.quiz-final h4{font-family:var(--mono);font-size:18px;margin-bottom:8px}
+.quiz-final p{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:12px}
+.cable-layer{cursor:pointer;transition:opacity .2s}
+.cable-diagram:hover .cable-layer{opacity:.3}
+.cable-diagram:hover .cable-layer:hover{opacity:1}
+.budget-bar{height:24px;border:3px solid var(--border);display:flex;margin:8px 0}
+.budget-fill{background:#22c55e;height:100%;transition:width .3s}
+.budget-loss{background:#dc2626;height:100%;transition:width .3s}
+.budget-margin{background:#ffe600;height:100%;transition:width .3s}
+.budget-labels{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--muted)}
+.svg-box{border:3px solid var(--border);background:var(--fill);padding:16px;margin:16px 0}
+footer{background:var(--fg);color:var(--bg);border-top:4px solid var(--border);padding:32px 16px;text-align:center}
+footer p{max-width:36em;margin:0 auto 8px;font-size:13px;color:rgba(240,237,228,.7)}
+.footer-brand{font-family:var(--mono);font-weight:800;margin-bottom:8px}
+.back-top{position:fixed;bottom:16px;right:16px;z-index:90;width:40px;height:40px;background:var(--fg);color:var(--accent);border:3px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:var(--mono);font-size:16px;font-weight:800;opacity:0;transition:opacity .3s;pointer-events:none}
+.back-top.show{opacity:1;pointer-events:auto}
+.back-top:hover{background:var(--accent);color:var(--fg)}
+@media(max-width:768px){.nav-links{display:none}.menu-btn{display:block}.nav-links.open{display:flex;position:absolute;top:56px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:4px solid var(--border);padding:8px}.nav-links.open a{padding:10px 16px;border-bottom:none;border-left:3px solid transparent}.nav-links.open a:hover{border-left-color:var(--hot);background:var(--accent)}}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr}.grid-2>div:first-child{border-right:none;border-bottom:3px solid var(--border)}.gloss{grid-template-columns:1fr}.swatches{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:400px){.swatches{grid-template-columns:repeat(3,1fr)}}
+@media print{header,.progress,.back-top,.hero-cta{display:none}body{background:#fff;color:#000;font-size:11pt}section{page-break-inside:avoid}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header><div class="nav">
+<button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">&#9776;</button>
+<a class="brand" href="#top">FO</a>
+<nav class="nav-links" id="navLinks" aria-label="Navigasi">
+<a href="#dasar">Dasar</a><a href="#struktur">Struktur</a><a href="#cara-kerja">Cara Kerja</a><a href="#jenis">Jenis</a><a href="#warna">Warna</a><a href="#plus-minus">+/-</a><a href="#banding">Banding</a><a href="#aplikasi">Aplikasi</a><a href="#konektor">Konektor</a><a href="#instalasi">Instalasi</a><a href="#tools">Tools</a><a href="#troubleshoot">Troubleshoot</a><a href="#standar">Standar</a><a href="#glosarium">Glosarium</a><a href="#faq">FAQ</a>
+</nav>
+</div></header>
+<div id="top"></div>
+<section class="hero">
+<h1>FO</h1>
+<p>Kabel fiber optik. Struktur, cara kerja, jenis, konektor, alat ukur, instalasi, tools.</p>
+<div class="hero-cta"><a href="#dasar" class="btn">Mulai Baca</a><a href="#tools" class="btn btn-outline">Tools</a><a href="#faq" class="btn btn-outline">FAQ</a></div>
+</section>
+<main>
+<section id="dasar"><div class="sec-num">01</div><h2>Dasar</h2>
+<p class="lede">Kabel fiber optik (serat optik) adalah media transmisi dari serat kaca silika murni, berdiameter sekitar 125 mikrometer.</p>
+<p>Data dikirim sebagai pulsa cahaya yang merambat di dalam serat. Satu helai serat dapat membawa puluhan hingga ratusan kanal informasi via <em>wavelength division multiplexing</em> (WDM).</p>
+<p>Cahaya dipandu di dalam inti serat melalui fenomena <strong>pemantulan internal total</strong>. Pemantulan ini terjadi karena indeks bias inti (core) lebih tinggi daripada cladding. Inti sekitar <code>1,47</code>, cladding sekitar <code>1,46</code>.</p>
+<h3>Ukuran dan Kapasitas</h3>
+<p>Ukuran serat ditulis sebagai <code>core/cladding</code> dalam mikrometer. Standar: <code>9/125</code> (single mode), <code>50/125</code> atau <code>62,5/125</code> (multi mode). Kapasitas: <code>10-400 Gbps</code> per panjang gelombang, dapat diperbesar dengan DWDM.</p>
+<div class="table-wrap"><table><thead><tr><th>Aspek</th><th>Single Mode</th><th>Multi Mode</th></tr></thead><tbody>
+<tr><td>Core</td><td>8-10 um</td><td>50/62,5 um</td></tr>
+<tr><td>Sumber</td><td>Laser</td><td>LED/VCSEL</td></tr>
+<tr><td>Jarak</td><td>10-100+ km</td><td>300m-2km</td></tr>
+<tr><td>Bandwidth</td><td>Tak terbatas</td><td>Terbatasi dispersi</td></tr>
+<tr><td>Biaya</td><td>Mahal</td><td>Murah</td></tr>
+</tbody></table></div>
+</section>
+<section id="struktur"><div class="sec-num">02</div><h2>Struktur</h2>
+<p class="lede">Kabel FO tersusun berlapis dari dalam ke luar. Setiap lapisan punya fungsi spesifik.</p>
+<div class="cable-diagram" style="max-width:300px;margin:0 auto">
+<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto">
+<g class="cable-layer" data-info="Outer Jacket: PE/PVC/LSZH, proteksi UV dan gesekan"><circle cx="110" cy="110" r="105" fill="#1a1a1a" stroke="#0a0a0a" stroke-width="2"/><text x="110" y="20" text-anchor="middle" font-family="monospace" font-size="7" fill="#888">JACKET</text></g>
+<g class="cable-layer" data-info="Aramid (Kevarl): benang penahan beban tarik 100-2700N"><g fill="#ffe600"><circle cx="110" cy="25" r="3"/><circle cx="170" cy="50" r="3"/><circle cx="195" cy="110" r="3"/><circle cx="170" cy="170" r="3"/><circle cx="110" cy="195" r="3"/><circle cx="50" cy="170" r="3"/><circle cx="25" cy="110" r="3"/><circle cx="50" cy="50" r="3"/></g></g>
+<g class="cable-layer" data-info="Buffer Tube: tabung plastik berisi serat dan gel anti-air"><circle cx="110" cy="110" r="80" fill="#0a0a0a" stroke="#333" stroke-width="1.5"/><circle cx="110" cy="110" r="75" fill="#e8e4d8" stroke="#333" stroke-width="1"/></g>
+<g class="cable-layer" data-info="Coating: lapisan akrilat berwarna, proteksi goresan"><circle cx="110" cy="110" r="60" fill="#0a0a0a" stroke="#333" stroke-width="1"/><circle cx="110" cy="110" r="55" fill="#d0ccc0" stroke="#333" stroke-width="1"/></g>
+<g class="cable-layer" data-info="Cladding: lapisan kaca indeks bias lebih rendah, pantulkan cahaya ke core"><circle cx="110" cy="110" r="40" fill="#0a0a0a" stroke="#333" stroke-width="1"/><circle cx="110" cy="110" r="35" fill="#c8c4b8" stroke="#333" stroke-width="1"/></g>
+<g class="cable-layer" data-info="Core: inti serat kaca tempat cahaya merambat, 8-10um (SM) / 50-62,5um (MM)"><circle cx="110" cy="110" r="15" fill="#ffe600" stroke="#0a0a0a" stroke-width="2.5"/></g>
+</svg>
+<div id="cableTip" style="margin-top:8px;padding:10px;background:var(--fill);border:2px solid var(--border);font-family:var(--mono);font-size:11px;min-height:20px;text-align:center">Hover diagram untuk info</div>
+</div>
+<div class="grid-2">
+<div><strong>1 - Core</strong><br>Inti serat kaca tempat cahaya merambat. 8-10 um (SM), 50/62,5 um (MM).</div>
+<div><strong>2 - Cladding</strong><br>Lapisan kaca indeks bias lebih rendah, memantulkan cahaya ke core.</div>
+<div><strong>3 - Coating</strong><br>Lapisan akrilat berwarna untuk proteksi dari goresan dan kelembapan.</div>
+<div><strong>4 - Buffer tube</strong><br>Tabung plastik berisi serat dan gel thixotropic anti-air.</div>
+<div><strong>5 - Strength member</strong><br>Benang aramid (Kevlar) atau batang FRP penahan beban tarik.</div>
+<div><strong>6 - Outer jacket</strong><br>Jaket PE/PVC/LSZH proteksi UV, gesekan, bahan kimia.</div>
+</div>
+</section>
+<section id="cara-kerja"><div class="sec-num">03</div><h2>Cara Kerja</h2>
+<p class="lede">Pengiriman data via FO: ubah data jadi cahaya, rambat di serat, ubah balik jadi data.</p>
+<div class="svg-box"><img src="assets/light-reflection.svg" alt="Animasi pemantulan internal total" style="width:100%;height:auto" loading="lazy"></div>
+<ol class="num">
+<li><strong>Modulasi sinyal.</strong> Transmitter (laser dioda/LED) ubah sinyal listrik jadi pulsa cahaya. Bit 1 = nyala, bit 0 = mati.</li>
+<li><strong>Perambatan.</strong> Cahaya masuk core dengan sudut tertentu, dipantulkan total di dinding cladding. Sepanjang jalan: atenuasi (melemah) dan dispersi (pulsa melebar).</li>
+<li><strong>Deteksi.</strong> Photodiode di receiver ubah pulsa cahaya balik jadi sinyal listrik.</li>
+</ol>
+<p>Atenuasi: SM sekitar <code>0,35 dB/km</code> @1310 nm, <code>0,20 dB/km</code> @1550 nm. MM sekitar <code>3 dB/km</code> @850 nm.</p>
+<div class="note"><strong>!</strong>n1 . sin theta1 = n2 . sin theta2. Pemantulan total saat theta1 lebih besar dari theta kritis = arcsin(n2/n1).</div>
+</section>
+<section id="jenis"><div class="sec-num">04</div><h2>Jenis</h2>
+<div class="table-wrap"><table><thead><tr><th>Kategori</th><th>Core</th><th>Warna Jaket</th><th>Kecepatan</th><th>Jarak Maks</th></tr></thead><tbody>
+<tr><td>OM1</td><td>62,5/125 um</td><td>Oranye</td><td>1 Gbps</td><td>275 m</td></tr>
+<tr><td>OM2</td><td>50/125 um</td><td>Oranye</td><td>1-10 Gbps</td><td>550 m</td></tr>
+<tr><td>OM3</td><td>50/125 um</td><td>Aqua</td><td>10-40 Gbps</td><td>300 m</td></tr>
+<tr><td>OM4</td><td>50/125 um</td><td>Aqua/Violet</td><td>40-100 Gbps</td><td>550 m</td></tr>
+<tr><td>OM5</td><td>50/125 um</td><td>Lime</td><td>40-100 Gbps (WDM)</td><td>550 m</td></tr>
+<tr><td>OS1/OS2</td><td>9/125 um</td><td>Kuning</td><td>10G-400G</td><td>10-100+ km</td></tr>
+</tbody></table></div>
+<h3>Berdasarkan Konstruksi</h3>
+<ul class="bullets">
+<li><strong>Simplex/Duplex.</strong> 1 serat (1 arah) atau 2 serat (TX/RX).</li>
+<li><strong>Drop cable (FTTH).</strong> Tipis fleksibel, 1-2 serat, strength member FRP.</li>
+<li><strong>Distribution.</strong> Banyak serat dalam loose tube, antar ODC-ODP.</li>
+<li><strong>ADSS.</strong> All-Dielectric Self-Supporting, gantung di tiang SUTET.</li>
+<li><strong>OPGW.</strong> Optical Ground Wire, serat di kawat tanah SUTT.</li>
+<li><strong>Submarine.</strong> Kabel laut antar benua, armoring baja berat.</li>
+</ul>
+</section>
+<section id="warna"><div class="sec-num">05</div><h2>Kode Warna TIA/EIA-598</h2>
+<p class="lede">12 warna untuk identifikasi serat di dalam tube. Pola berulang untuk serat ke-13+.</p>
+<ol class="swatches">
+<li><span class="sw" style="background:#1e6fd9"></span><span class="n">01</span><span class="nm">Biru</span></li>
+<li><span class="sw" style="background:#f97316"></span><span class="n">02</span><span class="nm">Oranye</span></li>
+<li><span class="sw" style="background:#22c55e"></span><span class="n">03</span><span class="nm">Hijau</span></li>
+<li><span class="sw" style="background:#92400e"></span><span class="n">04</span><span class="nm">Coklat</span></li>
+<li><span class="sw" style="background:#94a3b8"></span><span class="n">05</span><span class="nm">Abu-abu</span></li>
+<li><span class="sw" style="background:#f1f5f9"></span><span class="n">06</span><span class="nm">Putih</span></li>
+<li><span class="sw" style="background:#dc2626"></span><span class="n">07</span><span class="nm">Merah</span></li>
+<li><span class="sw" style="background:#0f172a"></span><span class="n">08</span><span class="nm">Hitam</span></li>
+<li><span class="sw" style="background:#eab308"></span><span class="n">09</span><span class="nm">Kuning</span></li>
+<li><span class="sw" style="background:#8b5cf6"></span><span class="n">10</span><span class="nm">Violet</span></li>
+<li><span class="sw" style="background:#ec4899"></span><span class="n">11</span><span class="nm">Pink</span></li>
+<li><span class="sw" style="background:#06b6d4"></span><span class="n">12</span><span class="nm">Aqua</span></li>
+</ol>
+<div class="table-wrap"><table><thead><tr><th>No</th><th>Warna</th><th>Hex</th><th>RGB</th></tr></thead><tbody>
+<tr><td>01</td><td>Biru</td><td>#1E6FD9</td><td>30,111,217</td></tr>
+<tr><td>02</td><td>Oranye</td><td>#F97316</td><td>249,115,22</td></tr>
+<tr><td>03</td><td>Hijau</td><td>#22C55E</td><td>34,197,94</td></tr>
+<tr><td>04</td><td>Coklat</td><td>#92400E</td><td>146,64,14</td></tr>
+<tr><td>05</td><td>Abu-abu</td><td>#94A3B8</td><td>148,163,184</td></tr>
+<tr><td>06</td><td>Putih</td><td>#F1F5F9</td><td>241,245,249</td></tr>
+<tr><td>07</td><td>Merah</td><td>#DC2626</td><td>220,38,38</td></tr>
+<tr><td>08</td><td>Hitam</td><td>#0F172A</td><td>15,23,42</td></tr>
+<tr><td>09</td><td>Kuning</td><td>#EAB308</td><td>234,179,8</td></tr>
+<tr><td>10</td><td>Violet</td><td>#8B5CF6</td><td>139,92,246</td></tr>
+<tr><td>11</td><td>Pink</td><td>#EC4899</td><td>236,72,153</td></tr>
+<tr><td>12</td><td>Aqua</td><td>#06B6D4</td><td>6,182,212</td></tr>
+</tbody></table></div>
+</section>
+<section id="plus-minus"><div class="sec-num">06</div><h2>Kelebihan dan Kekurangan</h2>
+<div class="grid-2">
+<div><strong style="font-family:var(--mono);font-size:12px;background:var(--accent);padding:4px 8px;display:inline-block;margin-bottom:10px">Kelebihan</strong>
+<ul class="bullets"><li>Bandwidth besar</li><li>Jarak jauh, repeater jarang</li><li>Bebas EMI</li><li>Sulit disadap</li><li>Ringan dan kecil</li><li>Tidak berkarat</li><li>Aman dari korsleting</li></ul></div>
+<div><strong style="font-family:var(--mono);font-size:12px;background:var(--fg);color:var(--accent);padding:4px 8px;display:inline-block;margin-bottom:10px">Kekurangan</strong>
+<ul class="bullets"><li>Peralatan mahal</li><li>Rentan tekukan tajam</li><li>Perlu tenaga ahli</li><li>Tidak bisa daya listrik</li><li>Perbaikan butuh alat khusus</li><li>Konektor mudah kotor</li><li>Getar di suhu ekstrem</li></ul></div>
+</div>
+</section>
+<section id="banding"><div class="sec-num">07</div><h2>Perbandingan Media</h2>
+<div class="table-wrap"><table><thead><tr><th>Aspek</th><th>Fiber Optik</th><th>UTP</th><th>Coaxial</th><th>Wireless</th></tr></thead><tbody>
+<tr><td>Bandwidth</td><td>10G-100+G</td><td>1-10G</td><td>100M-1G</td><td>Bervariasi</td></tr>
+<tr><td>Jarak</td><td>10-100 km</td><td>100 m</td><td>200-500 m</td><td>100m-50km</td></tr>
+<tr><td>EMI</td><td>Sangat baik</td><td>Rendah</td><td>Sedang</td><td>Rentan</td></tr>
+<tr><td>Keamanan</td><td>Tinggi</td><td>Sedang</td><td>Sedang</td><td>Rendah</td></tr>
+<tr><td>Biaya kabel</td><td>Sedang</td><td>Rendah</td><td>Rendah</td><td>N/A</td></tr>
+</tbody></table></div>
+</section>
+<section id="aplikasi"><div class="sec-num">08</div><h2>Aplikasi</h2>
+<ul class="bullets">
+<li><strong>Backbone internet</strong> - antar kota dan kabel laut.</li>
+<li><strong>FTTH/FTTx</strong> - internet rumah langsung serat.</li>
+<li><strong>Data center</strong> - 25G-400G per link.</li>
+<li><strong>CCTV dan keamanan</strong> - jarak jauh tanpa EMI.</li>
+<li><strong>Industri dan SCADA</strong> - lingkungan medan elektromagnetik tinggi.</li>
+<li><strong>BTS dan radio</strong> - fronthaul/backhaul menara.</li>
+<li><strong>Sensor</strong> - Fiber Bragg Grating untuk regangan jembatan.</li>
+</ul>
+</section>
+<section id="konektor"><div class="sec-num">09</div><h2>Konektor dan Alat Ukur</h2>
+<h3>Jenis Konektor</h3>
+<ul class="bullets">
+<li><strong>SC.</strong> Persegi, push-pull. Paling umum FTTH Indonesia.</li>
+<li><strong>LC.</strong> Kecil (SFF), latch RJ45. Dominan data center.</li>
+<li><strong>ST.</strong> Bayonet putar. Jaringan lama multi mode.</li>
+<li><strong>FC.</strong> Ulir, stabil. Telecom dan lab.</li>
+</ul>
+<h3>Alat Ukur</h3>
+<div class="table-wrap"><table><thead><tr><th>Alat</th><th>Fungsi</th><th>Kapan</th></tr></thead><tbody>
+<tr><td>Fusion splicer</td><td>Sambung serat dengan busur listrik</td><td>Splicing ODP/closure</td></tr>
+<tr><td>Fiber cleaver</td><td>Potong serat sudut 90 derajat presisi</td><td>Sebelum splicing</td></tr>
+<tr><td>OTDR</td><td>Ukur redaman dan lokasi gangguan</td><td>Commissioning/troubleshoot</td></tr>
+<tr><td>OPM</td><td>Ukur daya optik diterima</td><td>Cek level sinyal</td></tr>
+<tr><td>VFL</td><td>Laser merah cari titik patah</td><td>Pencarian cepat</td></tr>
+<tr><td>OLTS</td><td>Uji total loss end-to-end</td><td>Sebelum aktif</td></tr>
+<tr><td>Fiber cleaner</td><td>Bersihkan ferrule konektor</td><td>Sebelum connect</td></tr>
+</tbody></table></div>
+</section>
+<section id="instalasi"><div class="sec-num">10</div><h2>Instalasi</h2>
+<ol class="num">
+<li><strong>Jaga radius bending.</strong> Minimal 10-20x diameter. Drop cable minimal 15 mm.</li>
+<li><strong>Jangan melebihi batas tarik.</strong> 100-2700 N. Pakai grip, jangan tarik jaket.</li>
+<li><strong>Bersihkan sebelum koneksi.</strong> Debu 1 um bisa tambah loss. Pakai one-click cleaner.</li>
+<li><strong>Hindari tekukan 90 derajat.</strong> Pakai elbow/ray radius memadai.</li>
+<li><strong>Beri slack.</strong> 5-10 m di closure untuk perbaikan.</li>
+<li><strong>Labeli setiap serat.</strong> Ikuti kode warna dan label tube/port.</li>
+<li><strong>Lindungi UV dan hewan.</strong> Outdoor: UV-resistant. Tanam: armored.</li>
+<li><strong>Dokumentasikan hasil ukur.</strong> Simpan baseline OTDR dan OPM.</li>
+</ol>
+<div class="note"><strong>!</strong>ITU-T G.652 (SM standar), G.655 (NZDSF DWDM), G.657 (bending insensitive FTTH). Kode warna: TIA/EIA-598.</div>
+</section>
+<section id="tools"><div class="sec-num">11</div><h2>Tools</h2>
+<p class="lede">Kalkulator dan kuis. Semua client-side.</p>
+<div style="display:flex;gap:0;margin:16px 0;border:3px solid var(--border)">
+<button class="tab-btn active" onclick="switchTab('calc',this)">Kalkulator</button>
+<button class="tab-btn" onclick="switchTab('match',this)">Konektor</button>
+<button class="tab-btn" onclick="switchTab('quiz',this)">Kuis Warna</button>
+<button class="tab-btn" onclick="switchTab('speed',this)">Link Budget</button>
+<button class="tab-btn" onclick="switchTab('konektor',this)">Kuis Konektor</button>
+<button class="tab-btn" onclick="switchTab('alat',this)">Kuis Alat</button>
+</div>
+<div id="tab-calc" class="tab-panel">
+<div class="tool">
+<label>Jenis Serat</label>
+<select id="cType"><option value="0.35">SM @1310nm (0.35 dB/km)</option><option value="0.20">SM @1550nm (0.20 dB/km)</option><option value="3.0">MM @850nm (3.0 dB/km)</option><option value="1.0">MM @1300nm (1.0 dB/km)</option></select>
+<label>Panjang Kabel (km)</label><input type="number" id="cLen" value="10" min="0.1" step="0.1">
+<label>Jumlah Splice</label><input type="number" id="cSp" value="2" min="0">
+<label>Jumlah Konektor</label><input type="number" id="cCo" value="2" min="0">
+<button class="btn" onclick="calcLoss()">Hitung</button>
+<div class="result" id="cRes"></div>
+</div>
+</div>
+<div id="tab-match" class="tab-panel" style="display:none">
+<div class="tool">
+<label>Jenis Kabel</label><select id="mCable"><option value="sm">Single Mode</option><option value="mm">Multi Mode</option></select>
+<label>Aplikasi</label><select id="mApp"><option value="ftth">FTTH/Rumah</option><option value="dc">Data Center</option><option value="tel">Telekomunikasi</option><option value="out">Outdoor</option></select>
+<button class="btn" onclick="matchConn()">Cari</button>
+<div class="result" id="mRes"></div>
+</div>
+</div>
+<div id="tab-quiz" class="tab-panel" style="display:none">
+<div class="quiz" id="quizBox">
+<div class="quiz-header"><span id="qProg">Soal 1/12</span><span id="qTimer">0s</span></div>
+<div class="quiz-bar"><div class="quiz-bar-fill" id="qBar"></div></div>
+<div class="quiz-color" id="qColor">?</div>
+<div class="quiz-opts" id="qOpts"></div>
+<div class="quiz-msg" id="qMsg"></div>
+<div class="quiz-score"><span class="ok" id="qCorrect">OK 0</span><span class="no" id="qWrong">X 0</span></div>
+</div>
+</div>
+<div id="tab-speed" class="tab-panel" style="display:none">
+<div class="tool">
+<label>TX Power (dBm)</label><input type="number" id="sTx" value="0" step="0.5">
+<label>RX Sensitivity (dBm)</label><input type="number" id="sRx" value="-28" step="0.5">
+<label>Fiber Loss (dB)</label><input type="number" id="sFiber" value="3.5" step="0.1">
+<label>Splice Loss (dB)</label><input type="number" id="sSplice" value="0.1" step="0.01">
+<label>Connector Loss (dB)</label><input type="number" id="sConn" value="0.6" step="0.1">
+<label>Safety Margin (dB)</label><input type="number" id="sMargin" value="3" step="0.5">
+<button class="btn" onclick="calcBudget()">Hitung</button>
+<div class="result" id="sRes"></div>
+</div>
+</div>
+<div id="tab-konektor" class="tab-panel" style="display:none">
+<div class="quiz" id="kQuizBox">
+<div class="quiz-header"><span id="kProg">Soal 1/4</span><span id="kTimer">0s</span></div>
+<div class="quiz-bar"><div class="quiz-bar-fill" id="kBar"></div></div>
+<div style="padding:20px;background:var(--bg);border:3px solid var(--border);margin-bottom:12px;text-align:center"><div id="kDesc" style="font-family:var(--mono);font-size:13px;font-weight:700"></div></div>
+<div class="quiz-opts" id="kOpts"></div>
+<div class="quiz-msg" id="kMsg"></div>
+<div class="quiz-score"><span class="ok" id="kCorrect">OK 0</span><span class="no" id="kWrong">X 0</span></div>
+</div>
+</div>
+<div id="tab-alat" class="tab-panel" style="display:none">
+<div class="quiz" id="aQuizBox">
+<div class="quiz-header"><span id="aProg">Soal 1/5</span><span id="aTimer">0s</span></div>
+<div class="quiz-bar"><div class="quiz-bar-fill" id="aBar"></div></div>
+<div style="padding:20px;background:var(--bg);border:3px solid var(--border);margin-bottom:12px;text-align:center"><div id="aDesc" style="font-family:var(--mono);font-size:13px;font-weight:700"></div></div>
+<div class="quiz-opts" id="aOpts"></div>
+<div class="quiz-msg" id="aMsg"></div>
+<div class="quiz-score"><span class="ok" id="aCorrect">OK 0</span><span class="no" id="aWrong">X 0</span></div>
+</div>
+</div>
+</section>
+<section id="troubleshoot"><div class="sec-num">12</div><h2>Troubleshooting</h2>
+<ol class="num">
+<li><strong>OTDR tidak connect.</strong> Cek kabel USB/LAN, pastikan panjang gelombang sesuai, clean connector. Restart OTDR.</li>
+<li><strong>Redaman tinggi di sambungan.</strong> Clean ferrule, cek cleave angle (kurang dari 0.5 derajat), pasang splice sleeve. Ulangi splice kalau lebih dari 0.1 dB.</li>
+<li><strong>Sinyal hilang.</strong> VFL untuk cari patah. Cek connector alignment, macro-bending. OPM untuk konfirmasi daya.</li>
+<li><strong>Ghost di OTDR.</strong> Refleksi kuat di connector. Clean, pakai attenuator sementara.</li>
+<li><strong>Splicer fiber too short.</strong> Cleave terlalu pendek. Atur 10-16mm, ganti blade kalau tumpul.</li>
+<li><strong>Loss tidak konsisten.</strong> Stabilkan suhu, cek adapter, tunggu 30s setelah pasang.</li>
+<li><strong>Konektor kotor terus.</strong> Pakai dust cap, one-click cleaner sebelum connect, pertimbangkan shutter otomatis.</li>
+</ol>
+</section>
+<section id="standar"><div class="sec-num">13</div><h2>Standar dan Regulasi</h2>
+<div class="table-wrap"><table><thead><tr><th>Standar</th><th>Organisasi</th><th>Cakupan</th></tr></thead><tbody>
+<tr><td>G.652</td><td>ITU-T</td><td>Single mode standar</td></tr>
+<tr><td>G.655</td><td>ITU-T</td><td>NZDSF untuk DWDM jarak jauh</td></tr>
+<tr><td>G.657</td><td>ITU-T</td><td>Bending insensitive untuk FTTH</td></tr>
+<tr><td>G.984</td><td>ITU-T</td><td>GPON - 2.5G down / 1.25G up</td></tr>
+<tr><td>G.9807</td><td>ITU-T</td><td>XGS-PON - 10G symmetric</td></tr>
+<tr><td>598</td><td>TIA/EIA</td><td>Kode warna serat (12 warna)</td></tr>
+<tr><td>11801</td><td>ISO/IEC</td><td>Kabel kelas OM/OS</td></tr>
+<tr><td>IEEE 802.3</td><td>IEEE</td><td>Ethernet over fiber (10G/40G/100G)</td></tr>
+<tr><td>SNI 7115</td><td>BSN</td><td>Kabel serat optik Indonesia</td></tr>
+</tbody></table></div>
+</section>
+<section id="glosarium"><div class="sec-num">14</div><h2>Glosarium</h2>
+<dl class="gloss">
+<div><dt>Atenuasi</dt><dd>Penurunan daya sinyal optik sepanjang serat (dB/km).</dd></div>
+<div><dt>Bandwidth</dt><dd>Rentang frekuensi yang dapat dibawa (Gbps/THz.km).</dd></div>
+<div><dt>Cladding</dt><dd>Lapisan kaca indeks bias lebih rendah dari core.</dd></div>
+<div><dt>Core</dt><dd>Inti serat tempat cahaya merambat.</dd></div>
+<div><dt>Dispersi</dt><dd>Pelebaran pulsa akibat perbedaan kecepatan cahaya.</dd></div>
+<div><dt>DWDM</dt><dd>Dense WDM - puluhan panjang gelombang dalam 1 serat.</dd></div>
+<div><dt>FTTH</dt><dd>Fiber to the Home - serat langsung ke rumah pelanggan.</dd></div>
+<div><dt>GPON</dt><dd>Gigabit PON - 2.5G down/1.25G up, split 1:64-128.</dd></div>
+<div><dt>OLT</dt><dd>Optical Line Terminal - sisi provider di PON.</dd></div>
+<div><dt>ONT</td><dd>Optical Network Terminal - sisi user di PON.</dd></div>
+<div><dt>OTDR</dt><dd>Optical Time Domain Reflectometer - ukur redaman dan gangguan.</dd></div>
+<div><dt>Splicing</dt><dd>Menyambung 2 serat permanen (fusion/mekanis).</dd></div>
+<div><dt>VFL</dt><dd>Visual Fault Locator - laser merah cari patah.</dd></div>
+<div><dt>WDM</dt><dd>Wavelength Division Multiplexing - banyak sinyal, panjang gelombang beda.</dd></div>
+</dl>
+</section>
+<section id="faq"><div class="sec-num">15</div><h2>FAQ</h2>
+<dl class="gloss">
+<div><dt>Radius bending minimum?</dt><dd>Drop cable minimal 15 mm terpasang, 30 mm instalasi. Distribusi 10-20x diameter.</dd></div>
+<div><dt>SM atau MM untuk FTTH?</dt><dd>SM wajib. Jarak lebih dari 2 km, bandwidth besar. MM hanya untuk data center kurang dari 300 m.</dd></div>
+<div><dt>Umur splice fusion?</dt><dd>25+ tahun kalau benar. Faktor: kualitas splicer, kebersihan, suhu, kelembapan.</dd></div>
+<div><dt>Kapan pakai armored?</dt><dd>Tanam langsung, area hewan pengerat, risiko tekanan mekanik. Indoor cukup LSZH.</dd></div>
+<div><dt>Loss maksimal?</dt><dd>Splice kurang dari 0.05 dB, konektor kurang dari 0.3 dB. Link budget: Class A kurang dari 1.5 dB, Class B kurang dari 3.0 dB.</dd></div>
+<div><dt>GPON vs EPON?</dt><dd>GPON (ITU-T): 2.5G/1.25G, split 1:128. EPON (IEEE): 1.25G sym, split 1:32. GPON untuk skala besar.</dd></div>
+<div><dt>Minimum serat drop cable?</dt><dd>1 serat (simplex) minimum. Standar terkini 2 serat (duplex) - 1 aktif, 1 cadangan.</dd></div>
+<div><dt>Standar yang dipakai?</dt><dd>ITU-T G.652 (SM), G.657 (bending insensitive), TIA/EIA-598 (kode warna).</dd></div>
+</dl>
+</section>
+</main>
+<footer>
+<div class="footer-brand">FO</div>
+<p>Kabel fiber optik, struktur sampai praktik.</p>
+<p style="font-size:11px;opacity:.5;margin-top:8px">(c) 2026</p>
+</footer>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">UP</button>
+<script>
+// Scroll progress + back-to-top
+window.addEventListener('scroll',function(){
+  var s=(scrollY/(document.documentElement.scrollHeight-innerHeight))*100;
+  document.getElementById('progress').style.width=s+'%';
+  document.getElementById('backTop').classList.toggle('show',scrollY>500);
+});
+// Active nav
+var secs=document.querySelectorAll('section[id]');
+var navs=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',function(){
+  var c='';
+  secs.forEach(function(s){if(scrollY>=s.offsetTop-80)c=s.id});
+  navs.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+c)});
+});
+// Mobile menu
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open')});
+});
+// Cable diagram tooltip
+document.querySelectorAll('.cable-layer').forEach(function(g){
+  g.addEventListener('mouseenter',function(){document.getElementById('cableTip').textContent=this.getAttribute('data-info')});
+  g.addEventListener('mouseleave',function(){document.getElementById('cableTip').textContent='Hover diagram untuk info'});
+});
+// Tab switcher
+function switchTab(t,el){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.style.display='none'});
+  document.getElementById('tab-'+t).style.display='block';
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+  el.classList.add('active');
+}
+// Kalkulator
+function calcLoss(){
+  var loss=parseFloat(document.getElementById('cType').value);
+  var len=parseFloat(document.getElementById('cLen').value)||0;
+  var sp=parseInt(document.getElementById('cSp').value)||0;
+  var co=parseInt(document.getElementById('cCo').value)||0;
+  var cl=len*loss,sl=sp*0.05,co2=co*0.3,tot=cl+sl+co2;
+  var st=tot<3?'OK':tot<10?'Periksa':'Terlalu tinggi';
+  document.getElementById('cRes').innerHTML='<div style="border-bottom:2px solid var(--border);padding-bottom:4px;margin-bottom:6px"><b>Hasil</b></div>Kabel: <b>'+cl.toFixed(2)+' dB</b><br>Splice ('+sp+'x): <b>'+sl.toFixed(2)+' dB</b><br>Konektor ('+co+'x): <b>'+co2.toFixed(2)+' dB</b><div style="border-top:2px solid var(--border);margin-top:6px;padding-top:6px;font-size:15px"><b>TOTAL: '+tot.toFixed(2)+' dB</b></div><div style="text-align:center;margin-top:4px">'+st+'</div>';
+  document.getElementById('cRes').style.display='block';
+}
+// Konektor matcher
+function matchConn(){
+  var c=document.getElementById('mCable').value,a=document.getElementById('mApp').value;
+  var r={'sm-ftth':['SC/UPC','LC/UPC','SC paling umum FTTH. LC untuk ruang terbatas.'],'sm-dc':['LC/UPC','LC/APC','LC SFF untuk density tinggi. APC untuk WDM.'],'sm-tel':['FC/UPC','SC/UPC','FC ulir stabil telecom. SC untuk distribusi.'],'sm-out':['SC/APC','FC/APC','APC kurangi refleksi. SC tahan cuaca.'],'mm-ftth':['SC/UPC','LC/UPC','SC standar. MM jarang FTTH.'],'mm-dc':['LC/UPC','MPO','LC duplex, MPO 40G/100G.'],'mm-tel':['ST/UPC','SC/UPC','ST bayonet lama. SC upgrade.'],'mm-out':['SC/UPC','ST/UPC','MM jarang outdoor.']};
+  var v=r[c+'-'+a]||r['sm-ftth'];
+  document.getElementById('mRes').innerHTML='<b>Primary: '+v[0]+'</b><br>Alternative: '+v[1]+'<br><em style="font-size:12px">'+v[2]+'</em>';
+  document.getElementById('mRes').style.display='block';
+}
+// Link budget
+function calcBudget(){
+  var tx=parseFloat(document.getElementById('sTx').value)||0;
+  var rx=parseFloat(document.getElementById('sRx').value)||0;
+  var fl=parseFloat(document.getElementById('sFiber').value)||0;
+  var sl=parseFloat(document.getElementById('sSplice').value)||0;
+  var cl=parseFloat(document.getElementById('sConn').value)||0;
+  var sm=parseFloat(document.getElementById('sMargin').value)||0;
+  var totalLoss=fl+sl+cl;
+  var budget=tx-rx;
+  var margin=budget-totalLoss-sm;
+  var st=margin>=0?'PASS':'FAIL';
+  var stColor=margin>=0?'#22c55e':'#dc2626';
+  document.getElementById('sRes').innerHTML='<div style="border-bottom:2px solid var(--border);padding-bottom:4px;margin-bottom:6px"><b>Link Budget</b></div>TX: <b>'+tx+' dBm</b> | RX: <b>'+rx+' dBm</b><br>Available: <b>'+budget.toFixed(1)+' dB</b><br>Fiber: '+fl.toFixed(1)+' | Splice: '+sl.toFixed(2)+' | Connector: '+cl.toFixed(1)+'<br>Total Loss: <b>'+totalLoss.toFixed(2)+' dB</b> | Safety: <b>'+sm.toFixed(1)+' dB</b><div style="border-top:2px solid var(--border);margin-top:6px;padding-top:6px;text-align:center"><b style="font-size:16px;color:'+stColor+'">'+st+'</b><br>Margin: <b>'+margin.toFixed(2)+' dB</b></div>';
+  document.getElementById('sRes').style.display='block';
+}
+// Generic quiz function
+function makeQuiz(data,boxId,prefix,optsPerQuestion){
+  var i=0,correct=0,wrong=0,timer=0,timerInt=null,answered=false,order=[];
+  function shuffle(a){for(var j=a.length-1;j>0;j--){var k=Math.floor(Math.random()*(j+1));var t=a[j];a[j]=a[k];a[k]=t}return a}
+  function show(){
+    if(i>=order.length){final();return}
+    answered=false;
+    var cur=order[i];
+    document.getElementById(prefix+'Prog').textContent='Soal '+(i+1)+'/'+order.length;
+    document.getElementById(prefix+'Bar').style.width=((i/order.length)*100)+'%';
+    document.getElementById(prefix+'Correct').textContent='OK '+correct;
+    document.getElementById(prefix+'Wrong').textContent='X '+wrong;
+    document.getElementById(prefix+'Msg').textContent='';
+    if(prefix==='q'){
+      var cc=document.getElementById('qColor');
+      cc.style.background=cur.c;cc.textContent=cur.n;
+      cc.style.color=(cur.n==='06'||cur.n==='09')?'#0a0a0a':'#fff';
+    } else {
+      document.getElementById(prefix+'Desc').textContent=cur.d;
+    }
+    var opts=data.slice();shuffle(opts);opts=opts.slice(0,optsPerQuestion);
+    if(opts.indexOf(cur)===-1)opts[0]=cur;shuffle(opts);
+    var oh='';
+    var key=prefix==='q'?'w':'a';
+    opts.forEach(function(o){oh+='<button class="quiz-opt" onclick="this._quiz.answer(this)" data-w="'+o[key]+'">'+o[key]+'</button>'});
+    var optsEl=document.getElementById(prefix+'Opts');
+    optsEl.innerHTML=oh;
+    optsEl.querySelectorAll('.quiz-opt').forEach(function(b){b._quiz=api});
+    timer=0;clearInterval(timerInt);
+    timerInt=setInterval(function(){timer++;document.getElementById(prefix+'Timer').textContent=timer+'s'},1000);
+  }
+  function answer(btn){
+    if(answered)return;answered=true;clearInterval(timerInt);
+    var cur=order[i],w=btn.getAttribute('data-w');
+    var key=prefix==='q'?'w':'a';
+    document.querySelectorAll('#'+prefix+'Opts .quiz-opt').forEach(function(o){o.disabled=true;if(o.getAttribute('data-w')===cur[key])o.classList.add('correct')});
+    if(w===cur[key]){correct++;document.getElementById(prefix+'Msg').textContent='Benar!';document.getElementById(prefix+'Msg').style.color='#22c55e'}
+    else{wrong++;btn.classList.add('wrong');document.getElementById(prefix+'Msg').textContent='Salah! Jawaban: '+cur[key];document.getElementById(prefix+'Msg').style.color='#dc2626'}
+    document.getElementById(prefix+'Correct').textContent='OK '+correct;
+    document.getElementById(prefix+'Wrong').textContent='X '+wrong;
+    setTimeout(function(){i++;show()},1200);
+  }
+  function final(){
+    clearInterval(timerInt);document.getElementById(prefix+'Bar').style.width='100%';
+    var pct=Math.round((correct/order.length)*100);
+    var e=pct>=90?'\uD83C\uDFC6':pct>=70?'\uD83C\uDF89':pct>=50?'\uD83D\uDC4D':'\uD83D\uDCDA';
+    var m=pct>=90?'Sempurna!':pct>=70?'Bagus!':pct>=50?'Lumayan':'Belajar lagi';
+    document.getElementById(boxId).innerHTML='<div class="quiz-final"><h4>'+e+' '+pct+'%</h4><p>'+correct+' benar / '+wrong+' salah<br>Waktu: '+timer+'s</p><p>'+m+'</p><button class="btn" onclick="'+prefix+'Quiz.restart()">Ulangi</button></div>';
+  }
+  function restart(){
+    document.getElementById(boxId).innerHTML=origHTML;
+    init();
+  }
+  function init(){i=0;correct=0;wrong=0;order=data.slice();shuffle(order);show()}
+  var origHTML=document.getElementById(boxId).innerHTML;
+  var api={answer:answer,restart:restart,init:init};
+  init();
+  return api;
+}
+// Quiz data
+var qd=[{n:'01',c:'#1E6FD9',w:'Biru'},{n:'02',c:'#F97316',w:'Oranye'},{n:'03',c:'#22C55E',w:'Hijau'},{n:'04',c:'#92400E',w:'Coklat'},{n:'05',c:'#94A3B8',w:'Abu-abu'},{n:'06',c:'#F1F5F9',w:'Putih'},{n:'07',c:'#DC2626',w:'Merah'},{n:'08',c:'#0F172A',w:'Hitam'},{n:'09',c:'#EAB308',w:'Kuning'},{n:'10',c:'#8B5CF6',w:'Violet'},{n:'11',c:'#EC4899',w:'Pink'},{n:'12',c:'#06B6D4',w:'Aqua'}];
+var kd=[{d:'Persegi, push-pull. Paling umum FTTH Indonesia.',a:'SC'},{d:'Kecil (SFF), latch seperti RJ45. Dominan data center.',a:'LC'},{d:'Bayonet putar. Banyak di jaringan lama multi mode.',a:'ST'},{d:'Pengunci ulir, sangat stabil. Telecom dan lab.',a:'FC'}];
+var ad=[{d:'Sambung dua serat dengan busur listrik.',a:'Fusion Splicer'},{d:'Ukur redaman dan lokasi gangguan sepanjang serat.',a:'OTDR'},{d:'Laser merah untuk cari titik patah.',a:'VFL'},{d:'Ukur daya optik yang diterima di ujung link.',a:'OPM'},{d:'Potong ujung serat dengan sudut 90 derajat presisi.',a:'Cleaver'}];
+// Add dummy options for quizzes
+kd.forEach(function(d){d.o=['SC','LC','ST','FC']});
+ad.forEach(function(d){
+  var all=['Fusion Splicer','OTDR','OPM','VFL','Cleaver'];
+  d.o=all.slice();
+});
+// Init quizzes
+var qQuiz=makeQuiz(qd,'quizBox','q',4);
+var kQuiz=makeQuiz(kd,'kQuizBox','k',4);
+var aQuiz=makeQuiz(ad,'aQuizBox','a',4);
+</script>
+</body>
+</html>
